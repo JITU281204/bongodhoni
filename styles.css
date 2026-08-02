@@ -2063,4 +2063,11 @@ td { padding: 12px; }
   .paper-sheet { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none; }
 }
 
-
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.spin-anim {
+  animation: spin 2s linear infinite;
+  display: inline-block;
+}
