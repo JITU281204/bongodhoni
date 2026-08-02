@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>বঙ্গধ্বনি | এডমিন ড্যাশবোর্ড ও রিয়েল-টাইম ট্রাফিক কন্ট্রোল</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ADMIN HEADER -->
+  <header class="brand-header" style="padding: 24px 0 16px;">
+    <div class="container brand-header-content" style="flex-direction: row; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <img src="logo.png" style="width: 58px; height: 58px; object-fit: contain; border-radius: 8px;" />
+        <div class="brand-logo-area" style="align-items: flex-start;">
+          <h1 class="brand-title" style="font-size: 2.5rem; color: var(--crimson);">বঙ্গধ্বনি সিএমএস</h1>
+          <div class="shimmer-tagline">Real-Time Traffic Analytics & Editorial Control Panel</div>
+        </div>
+      </div>
+      <div>
+        <a href="index.html" target="_blank" class="epaper-btn-header" style="background: var(--navy); color: #FFF;">🌐 লাইভ নিউজ পোর্টাল দেখুন</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="admin-wrapper">
+      
+      <!-- TOP NAV & ACTION BUTTON -->
+      <div class="admin-top-nav">
+        <div>
+          <h2 style="font-family: var(--font-serif); color: var(--text-1); font-size: 1.6rem;">সম্পাদকীয় ও রিয়েল-টাইম ট্রাফিক কন্ট্রোল</h2>
+          <p style="font-size: 0.9rem; color: var(--text-2);">রিয়েল-টাইমে এই মুহূর্তে কতজন অনলাইনে আছেন, ই-পেপার কতবার পড়া বা PDF ডাউনলোড হয়েছে তার সরাসরি লাইভ মেট্রিক্স।</p>
+        </div>
+        <button class="btn-action-primary" onclick="openModal('article-create-modal')">
+          ➕ নতুন খবর প্রকাশ করুন
+        </button>
+      </div>
+
+      <!-- REAL-TIME DASHBOARD STATS (4 CARDS) -->
+      <div class="stat-grid" id="admin-stats-row"></div>
+
+      <!-- MAIN CONTENT SPLIT: ARTICLES TABLE & LIVE EVENT LOG -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 32px;">
+        
+        <!-- PUBLISHED ARTICLES TABLE -->
+        <div class="table-container">
+          <div style="padding: 16px; background: var(--navy); color: #FFF; font-weight: bold; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: var(--font-serif); font-size: 1.1rem;">📰 ওয়েবসাইটে প্রকাশিত খবরসমূহের তালিকা</span>
+            <span style="font-size: 0.84rem; font-weight: normal; color: #CBD5E1;">লাইভ আপডেট</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>ছবি</th>
+                <th>শিরোনাম</th>
+                <th>বিভাগ</th>
+                <th style="text-align: right;">অ্যাকশন</th>
+              </tr>
+            </thead>
+            <tbody id="articles-table-body"></tbody>
+          </table>
+        </div>
+
+        <!-- REAL-TIME LIVE EVENT ACTIVITY FEED -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xs); overflow: hidden; display: flex; flex-direction: column;">
+          <div style="padding: 16px; background: var(--navy); color: #FFF; font-weight: bold; font-family: var(--font-serif); font-size: 1.1rem; display: flex; align-items: center; justify-content: space-between;">
+            <span>⚡ রিয়েল-টাইম অ্যাক্টিভিটি ফিড</span>
+            <span style="display:inline-block; width:9px; height:9px; background:#10B981; border-radius:50%; box-shadow: 0 0 8px #10B981;"></span>
+          </div>
+          <div id="event-logs-list" style="overflow-y: auto; max-height: 440px; flex-grow: 1;"></div>
+        </div>
+
+      </div>
+
+      <!-- SITE & EDITION SETTINGS FORM -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xs); padding: 24px;">
+        <h3 style="font-family: var(--font-serif); margin-bottom: 18px; color: var(--crimson); font-size: 1.3rem;">⚙️ সাপ্তাহিক এডিশন ও সাইট সেটিংস</h3>
+        <form onsubmit="saveSettingsHandler(event)">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px;">
+            <div class="form-group">
+              <label>সাপ্তাহিক এডিশনের তারিখ:</label>
+              <input type="text" id="set-edition-date" class="form-control" placeholder="যেমন: ৩১শে মার্চ - ৬ই এপ্রিল ২০২৬" />
+            </div>
+            <div class="form-group">
+              <label>WhatsApp হেল্পলাইন নম্বর:</label>
+              <input type="text" id="set-hotline" class="form-control" placeholder="919836978826" />
+            </div>
+            <div class="form-group">
+              <label>ই-মেইল এড্রেস:</label>
+              <input type="email" id="set-email" class="form-control" placeholder="bangadhwanisangbad@gmail.com" />
+            </div>
+          </div>
+          <button type="submit" class="btn-action-primary" style="background: #10B981; color: #FFF; margin-top: 8px;">💾 সেটিংস সেভ করুন</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CREATE NEW ARTICLE MODAL -->
+  <div class="modal-backdrop" id="article-create-modal">
+    <div class="article-modal" style="max-width: 720px;">
+      <div class="article-modal-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h2 style="font-family: var(--font-serif); color: var(--crimson);">➕ নতুন খবর প্রকাশ ফর্ম</h2>
+        <button class="btn-icon" onclick="closeModal('article-create-modal')" style="font-size: 1.5rem;">✕</button>
+      </div>
+
+      <form id="create-article-form" onsubmit="submitNewArticleForm(event)">
+        <div class="form-group">
+          <label>খবরের বিভাগ (Category):</label>
+          <select id="new-art-category" class="form-control" required>
+            <option value="rajya">রাজ্য-রাজধানী (State & Capital)</option>
+            <option value="desh">দেশ ও রাজনীতি (National)</option>
+            <option value="bharat">ভারত ডায়েরি (India Diary)</option>
+            <option value="neighbour">প্রতিবেশীর উত্থান (Neighbour)</option>
+            <option value="history">ইতিহাস ও কৃষ্টি (History & Culture)</option>
+            <option value="opinion">আপনার দৃষ্টি (Opinion & Reader Tip)</option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label>খবরের প্রধান শিরোনাম (Headline):</label>
+          <input type="text" id="new-art-title" class="form-control" placeholder="শিরোনাম লিখুন..." required />
+        </div>
+
+        <div class="form-group">
+          <label>সংক্ষিপ্ত তথ্য / সারসংক্ষেপ (Excerpt):</label>
+          <textarea id="new-art-excerpt" class="form-control" placeholder="প্রথম অনুচ্ছেদ বা হাইলাইট..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>ছবি (Image URL):</label>
+          <input type="url" id="new-art-image" class="form-control" placeholder="https://images.unsplash.com/photo-..." />
+        </div>
+
+        <div class="form-group">
+          <label>রিপোর্টার / লেখকের নাম:</label>
+          <input type="text" id="new-art-author" class="form-control" placeholder="যেমন: নিজস্ব প্রতিনিধি / বিশ্বজিৎ গুহ" />
+        </div>
+
+        <div class="form-group">
+          <label>সম্পূর্ণ বিষয়বস্তু (Full Body Content):</label>
+          <textarea id="new-art-content" class="form-control" style="min-height:150px;" placeholder="খবরের সম্পূর্ণ মূল বয়ান..." required></textarea>
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; gap: 8px;">
+          <input type="checkbox" id="new-art-hero" style="width: 18px; height: 18px;" />
+          <label for="new-art-hero" style="margin-bottom:0; cursor:pointer;">এই খবরটিকে হোমপেজের প্রধান 'Hero Lead' খবর হিসেব পিন করুন</label>
+        </div>
+
+        <div style="text-align: right; margin-top: 20px;">
+          <button type="button" class="btn-icon" onclick="closeModal('article-create-modal')" style="padding: 10px 16px; margin-right: 8px;">বাতিল</button>
+          <button type="submit" class="btn-action-primary">🚀 তাত্ক্ষণিক প্রকাশ করুন (Publish Now)</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- EDIT EXISTING ARTICLE MODAL -->
+  <div class="modal-backdrop" id="article-edit-modal">
+    <div class="article-modal" style="max-width: 720px;">
+      <div class="article-modal-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h2 style="font-family: var(--font-serif); color: var(--crimson);">✏️ খবর সম্পাদনা ফর্ম</h2>
+        <button class="btn-icon" onclick="closeModal('article-edit-modal')" style="font-size: 1.5rem;">✕</button>
+      </div>
+
+      <form id="edit-article-form" onsubmit="submitEditArticleForm(event)">
+        <input type="hidden" id="edit-art-id" />
+
+        <div class="form-group">
+          <label>খবরের বিভাগ (Category):</label>
+          <select id="edit-art-category" class="form-control" required>
+            <option value="rajya">রাজ্য-রাজধানী (State & Capital)</option>
+            <option value="desh">দেশ ও রাজনীতি (National)</option>
+            <option value="bharat">ভারত ডায়েরি (India Diary)</option>
+            <option value="neighbour">প্রতিবেশীর উত্থান (Neighbour)</option>
+            <option value="history">ইতিহাস ও কৃষ্টি (History & Culture)</option>
+            <option value="opinion">আপনার দৃষ্টি (Opinion & Reader Tip)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>খবরের প্রধান শিরোনাম (Headline):</label>
+          <input type="text" id="edit-art-title" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label>সংক্ষিপ্ত তথ্য / সারসংক্ষেপ (Excerpt):</label>
+          <textarea id="edit-art-excerpt" class="form-control" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>ছবি (Image URL):</label>
+          <input type="url" id="edit-art-image" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>রিপোর্টার / লেখকের নাম:</label>
+          <input type="text" id="edit-art-author" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>সম্পূর্ণ বিষয়বস্তু (Full Body Content):</label>
+          <textarea id="edit-art-content" class="form-control" style="min-height:150px;" required></textarea>
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; gap: 8px;">
+          <input type="checkbox" id="edit-art-hero" style="width: 18px; height: 18px;" />
+          <label for="edit-art-hero" style="margin-bottom:0; cursor:pointer;">এই খবরটিকে হোমপেজের প্রধান 'Hero Lead' খবর হিসেব পিন করুন</label>
+        </div>
+
+        <div style="text-align: right; margin-top: 20px;">
+          <button type="button" class="btn-icon" onclick="closeModal('article-edit-modal')" style="padding: 10px 16px; margin-right: 8px;">বাতিল</button>
+          <button type="submit" class="btn-action-primary" style="background:#2563EB; color:#FFF;">💾 পরিবর্তন সেভ করুন</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="cms-store.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

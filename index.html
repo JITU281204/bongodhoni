@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>বঙ্গধ্বনি | সনাতন বঙ্গের সনাতন ধ্বনি — ভিন্টেজ ও ঐতিহ্যবাহী ডিজিটাল সংবাদপত্র</title>
+  <meta name="description" content="বঙ্গধ্বনি — বাংলা ভাষায় নিরপেক্ষ, বস্তুনিষ্ঠ ও ঐতিহ্যবাহী খবরের প্রিমিয়াম ডিজিটাল মিডিয়া প্ল্যাটফর্ম ও ই-পেপার।">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=IM+Fell+English:ital@0;1&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&family=Noto+Serif+Bengali:wght@400;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP UTILITY BAR — Newspaper Strip -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="date-weather-info">
+        <div class="date-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span id="bengali-date-str">১৫ শ্রাবণ ১৪৩৩ | বৃহস্পতিবার, ৩০ জুলাই ২০২৬</span>
+        </div>
+        <div class="weather-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path><circle cx="12" cy="12" r="4"></circle></svg>
+          <button class="btn-location-trigger" onclick="requestUserLocation()" title="আপনার লাইভ লোকেশন ও আবহাওয়া আপডেট করুন">
+            <span id="top-bar-weather-text">📍 কলকাতা: ৩১°সে ⛅</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="top-bar-actions">
+        <span class="vintage-header-tag">📜 ভিন্টেজ পেপার এডিশন</span>
+        <button class="btn-icon" id="theme-toggle-btn" onclick="toggleTheme()" title="থিম পরিবর্তন">☀️ Light Mode</button>
+        <button class="btn-icon" onclick="openWhatsAppTip()" title="হোয়াটসঅ্যাপ হেল্পলাইন">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          +৯১-৯৮৩৬৯৭৮৮২৬
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLASSIC VINTAGE RETRO NEWSPAPER MASTHEAD (DOUBLE RULES & EARPIECES) -->
+  <header class="brand-header vintage-newspaper-header">
+    <div class="container brand-header-content">
+      
+      <div class="vintage-masthead-grid">
+        <!-- Left Earpiece Box -->
+        <div class="earpiece-box earpiece-left">
+          <div class="earpiece-title">সনাতন দর্পণ</div>
+          <div class="earpiece-detail">বর্ষ: ১ | সংখ্যা: ৪৫</div>
+          <div class="earpiece-detail">মূল্য: ১০ আনা / ₹১০</div>
+          <div class="vintage-stamp-sm">স্থাপিত ১৯৪৫</div>
+        </div>
+
+        <!-- Center Main Title Area -->
+        <div class="brand-logo-area">
+          <a href="index.html" class="logo-anchor" aria-label="বঙ্গধ্বনি — হোমপেজ">
+            <div class="brand-logo-wrapper">
+              <img src="logo.png" alt="বঙ্গধ্বনি লোগো" class="real-logo-img vintage-logo-img" draggable="false" />
+              <div>
+                <h1 class="brand-title vintage-title notranslate" translate="no">বঙ্গধ্বনি</h1>
+                <div class="brand-tagline-wrap">
+                  <span class="vintage-ornament-line">✦ ──────</span>
+                  <span class="shimmer-tagline typewriter-tagline">সনাতন বঙ্গের সনাতন ধ্বনি</span>
+                  <span class="vintage-ornament-line">────── ✦</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right Earpiece Box -->
+        <div class="earpiece-box earpiece-right">
+          <div class="earpiece-title" id="earpiece-location-name">কলকাতা সংস্করণ</div>
+          <div class="earpiece-detail" id="earpiece-weather-info">আবহাওয়া: ৩১°সে ⛅</div>
+          <button onclick="requestUserLocation()" title="লাইভ স্থান রিফ্রেশ করুন" style="margin-top:2px; font-size:0.68rem; background:rgba(0,0,0,0.06); border:1px solid var(--border-strong); padding:2px 6px; border-radius:2px; cursor:pointer; font-weight:bold; color:var(--crimson);">📍 স্থান আপডেট করুন</button>
+          <button class="epaper-btn-header vintage-btn" onclick="openEPaperModal(1)" style="margin-top:4px;">
+            📰 ই-পেপার (১৬ পৃষ্ঠা)
+          </button>
+        </div>
+      </div>
+
+      <!-- Vintage Sub-Bar Rules -->
+      <div class="header-meta-bar vintage-sub-bar">
+        <span class="meta-pill-vintage">স্বতন্ত্র ও নিরপেক্ষ ডিজিটাল সংবাদপত্র</span>
+        <span class="meta-pill-vintage">বঙ্গপ্রতিনিধি ইকোনোমিক অ্যান্ড কালচারাল ফাউন্ডেশন</span>
+        <span class="meta-pill-vintage">জাতীয় লেখক সংঘ মুখপত্র</span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- TOP NAVIGATION BAR (DEEP CRIMSON RED BANNER) -->
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <div class="nav-links">
+        <a href="#" class="nav-link active" onclick="handleCategoryNav('all', this); return false;">প্রচ্ছদ (পৃষ্ঠা ১)</a>
+        <a href="#" class="nav-link" onclick="handleCategoryNav('rajya', this); return false;">রাজ্য-রাজধানী (পৃষ্ঠা ২-৩)</a>
+        <a href="#" class="nav-link" onclick="handleCategoryNav('desh', this); return false;">দেশ ও রাজনীতি (পৃষ্ঠা ৪-৮)</a>
+        <a href="#" class="nav-link" onclick="handleCategoryNav('bharat', this); return false;">ভারত ডায়েরি (পৃষ্ঠা ৯)</a>
+        <a href="#" class="nav-link" onclick="handleCategoryNav('neighbour', this); return false;">প্রতিবেশীর উত্থান (পৃষ্ঠা ১০)</a>
+        <a href="#" class="nav-link" onclick="handleCategoryNav('history', this); return false;">ইতিহাস ও কৃষ্টি (পৃষ্ঠা ১১)</a>
+        <a href="#" class="nav-link" onclick="handleCategoryNav('opinion', this); return false;">আপনার দৃষ্টি (পৃষ্ঠা ১২)</a>
+        <a href="#" class="nav-link" onclick="openEPaperModal(1); return false;" style="color: #FFD700; font-weight:900;">📰 ই-পেপার (১৬ পৃষ্ঠা)</a>
+      </div>
+
+      <div class="nav-right-tools">
+        <button class="btn-nav-action" onclick="openSearchModal()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          সংবাদ সন্ধান
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREAKING NEWS TICKER -->
+  <div class="ticker-wrapper container">
+    <div class="ticker-label">
+      ব্রেকিং নিউজ
+    </div>
+    <div class="ticker-marquee">
+      <div class="ticker-items">
+        <span class="ticker-item" onclick="openArticleModal('art-101')">🔴 পশ্চিমবঙ্গে রাম নবমীর পালনে অভূতপূর্ব জনসমাগম ও রাজনৈতিক সমীকরণে নতুন বার্তা</span>
+        <span class="ticker-item" onclick="openArticleModal('art-102')">🔴 রাজার শহর কোচবিহারে ঐতিহাসিক রাম নবমী মিছিল ২০২৬</span>
+        <span class="ticker-item" onclick="openArticleModal('art-103')">🔴 ঐতিহাসিক অধ্যায়ের অবসান: নকশালমুক্ত ভারতের ঘোষণা কেন্দ্র সরকারের</span>
+        <span class="ticker-item" onclick="openArticleModal('art-106')">🔴 আচার্য ব্রহ্মগুপ্তের গোমূত্রিকা সূত্র — প্রাচীন ভারতীয় গণিতশাস্ত্রের ইতিহাস</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MAIN NEWSPAPER CONTENT LAYOUT -->
+  <main class="container main-content-layout">
+
+    <!-- BREADCRUMB INDICATOR (ANANDABAZAR PATRIKA RUTE) -->
+    <div id="section-breadcrumb-bar" class="breadcrumb-bar" style="display:none; margin-bottom:14px; font-size:0.88rem; color:var(--crimson); font-weight:bold; background:var(--bg-quote); border:1px solid var(--border-strong); padding:8px 14px; border-radius:4px;">
+      <span>বঙ্গধ্বনি</span> ➔ <span id="breadcrumb-active-name" style="color:var(--text-1);">রাজ্য-রাজধানী</span>
+    </div>
+
+    <!-- 1. HERO LEAD STORY SECTION (প্রচ্ছদ) -->
+    <section id="section-prochhod" class="category-section-block reveal">
+      <div id="hero-news-container" class="anandabazar-section-grid" style="display: grid;">
+        <div class="anandabazar-lead-card" onclick="openArticleModal('art-101')" style="background:var(--bg-card); cursor:pointer;">
+          <div class="anandabazar-lead-thumb" style="height:310px;">
+            <img src="12_page-0001.jpg" alt="জেসাস করিডর: ধর্মান্তরের রাজনীতি ও ভারতের সাংস্কৃতিক নিরাপত্তা" loading="lazy" />
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <span class="badge badge-crimson" style="font-size:0.8rem;">🔴 দেশ ও রাজনীতি</span>
+            <span class="badge badge-navy" style="font-size:0.75rem; cursor:pointer;" onclick="event.stopPropagation(); openEPaperModal(1);">📖 প্রচ্ছদ পৃষ্ঠা ১</span>
+          </div>
+          <h1 style="font-family:var(--font-serif); font-size:1.85rem; font-weight:900; line-height:1.3; color:var(--text-1); margin:8px 0;">জেসাস করিডর: ধর্মান্তরের রাজনীতি ও ভারতের সাংস্কৃতিক নিরাপত্তা</h1>
+          <p style="font-size:0.96rem; color:var(--text-2); line-height:1.6;">উত্তরপূর্ব ভারত ও পাঞ্জাবে মিশনারিদের তীব্র আগ্রাসনের বিরুদ্ধে সচেতনতার ডাক দিল জাতীয় লেখক সংঘ। সাংস্কৃতিক ঐতিহ্য রক্ষায় কড়া পদক্ষেপের বার্তা দিলেন আন্তর্জাতিক গবেষকবৃন্দ।</p>
+          <ul class="hero-bullets">
+            <li>রাম নবমীকে কেন্দ্র করে রাজপথ জুড়ে নজিরবিহীন জনসমাগম ও নতুন রাজনৈতিক সমীকরণ</li>
+            <li>উত্তর ও দক্ষিণবঙ্গের বিভিন্ন জেলায় বিশেষ নিরাপত্তা বন্দোবস্ত ও সাংস্কৃতিক পদযাত্রা</li>
+          </ul>
+          <div style="margin-top:auto; padding-top:10px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+            <span>📅 ৩১ মার্চ ২০২৬ | লেখক: দেবজ্যোতি চক্রবর্তী</span>
+            <span style="color:var(--crimson); font-weight:bold;">সম্পূর্ণ পড়ুন ➔</span>
+          </div>
+        </div>
+        <div class="anandabazar-side-stack">
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-102')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0002.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow:1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">রাজ্য-রাজধানী</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(2);">📖 পৃষ্ঠা ২</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.98rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">মদন-বাণে চাপে অভিষেক, এবার আইনি নোটিসের পথ!</h4>
+              <span style="font-size:0.75rem; color:var(--text-muted);">📅 ৩০ মার্চ ২০২৬</span>
+            </div>
+          </div>
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-107')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0003.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow:1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">রাজ্য-রাজধানী</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(3);">📖 পৃষ্ঠা ৩</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.98rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">অথ দেবরাজ কথা — জামিন খারিজ সিআইডি হেফাজতে</h4>
+              <span style="font-size:0.75rem; color:var(--text-muted);">📅 ৩০ মার্চ ২০২৬</span>
+            </div>
+          </div>
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-116')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0016.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow:1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">উত্তরবঙ্গ</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(16);">📖 পৃষ্ঠা ১৬</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.98rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">তিস্তা নদী সেচ প্রকল্প ও উত্তরবঙ্গের চা বাগান সংস্কার</h4>
+              <span style="font-size:0.75rem; color:var(--text-muted);">📅 ২৯ মার্চ ২০২৬</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. STATE & CAPITAL SECTION (রাজ্য-রাজধানী - Kolkata & West Bengal) -->
+    <section id="section-rajya" class="category-section-block reveal">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px; border-bottom:2px solid var(--crimson); padding-bottom:10px;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--crimson); font-weight:bold; text-transform:uppercase; letter-spacing:1px; display:block;">পশ্চিমবঙ্গ ও রাজ্য সংবাদ</span>
+          <h2 class="section-title" style="margin:0; font-size:1.6rem; color:var(--crimson);">রাজ্য-রাজধানী</h2>
+        </div>
+        <button class="epaper-btn-header vintage-btn" onclick="openEPaperModal(2)" style="font-size:0.8rem; padding:4px 12px;">
+          📖 পৃষ্ঠা ২ ও ৩ ই-পেপার দেখুন ➔
+        </button>
+      </div>
+
+      <!-- District Filter Pills -->
+      <div class="district-pills-bar" style="margin-bottom:18px;">
+        <span class="district-label">জেলা নির্বাচন:</span>
+        <button class="district-btn active" onclick="filterDistrict('all', this)">সব জেলা</button>
+        <button class="district-btn" onclick="filterDistrict('kolkata', this)">কলকাতা</button>
+        <button class="district-btn" onclick="filterDistrict('howrah', this)">হাওড়া</button>
+        <button class="district-btn" onclick="filterDistrict('siliguri', this)">উত্তরবঙ্গ</button>
+        <button class="district-btn" onclick="filterDistrict('asansol', this)">আসানসোল-দুর্গাপুর</button>
+      </div>
+
+      <div class="anandabazar-section-grid" id="grid-rajya-container" style="display: grid;">
+        <div class="anandabazar-lead-card" onclick="openArticleModal('art-102')" style="background:var(--bg-card); cursor:pointer;">
+          <div class="anandabazar-lead-thumb" style="height:250px;"><img src="12_page-0002.jpg" alt="সংবাদ" loading="lazy" /></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <span class="badge badge-crimson" style="font-size:0.75rem;">🔴 রাজ্য-রাজধানী</span>
+            <span class="badge badge-navy" style="font-size:0.72rem; cursor:pointer;" onclick="event.stopPropagation(); openEPaperModal(2);">📖 পৃষ্ঠা ২</span>
+          </div>
+          <h3 style="font-family:var(--font-serif); font-size:1.35rem; font-weight:900; line-height:1.3; color:var(--text-1); margin:8px 0 6px 0;">মদন-বাণে চাপে অভিষেক, এবার আইনি নোটিসের পথ!</h3>
+          <p style="font-size:0.9rem; color:var(--text-2); line-height:1.5; margin-bottom:10px;">কামারহাটির বিধায়ক মদন মিত্রের একের পর এক বিস্ফোরক মন্তব্যের জেরে অস্বস্তিতে শাসক দল।</p>
+          <div style="margin-top:auto; padding-top:8px; border-top:1px dashed var(--border-strong); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
+            <span>📅 ৩০ মার্চ ২০২৬ | সৌমিক বন্দ্যোপাধ্যায়</span>
+            <span style="color:var(--crimson); font-weight:bold;">সম্পূর্ণ পড়ুন ➔</span>
+          </div>
+        </div>
+        <div class="anandabazar-side-stack">
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-107')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0003.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">রাজ্য-রাজধানী</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(3);">📖 পৃষ্ঠা ৩</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">অথ দেবরাজ কথা — জামিন খারিজ নির্দেশ উচ্চ আদালতের</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ৩০ মার্চ ২০২৬</span>
+            </div>
+          </div>
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-116')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0016.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">উত্তরবঙ্গ</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(16);">📖 পৃষ্ঠা ১৬</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">তিস্তা নদী সেচ প্রকল্প ও উত্তরবঙ্গের চা বাগান সংস্কারে কমিটি</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২৯ মার্চ ২০২৬</span>
+            </div>
+          </div>
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-101')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0001.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">কলকাতা</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(1);">📖 পৃষ্ঠা ১</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">রাম নবমীতে কলকাতার রাজপথে ঐতিহাসিক শোভাযাত্রা</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ৩১ মার্চ ২০২৬</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. NATIONAL & POLITICS SECTION (দেশ ও রাজনীতি) -->
+    <section id="section-desh" class="category-section-block reveal">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; border-bottom:2px solid var(--navy); padding-bottom:10px;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--crimson); font-weight:bold; text-transform:uppercase; letter-spacing:1px; display:block;">জাতীয় সুরক্ষা ও দেশ বার্তা</span>
+          <h2 class="section-title" style="margin:0; font-size:1.6rem;">দেশ ও রাজনীতি</h2>
+        </div>
+        <button class="epaper-btn-header vintage-btn" onclick="openEPaperModal(4)" style="font-size:0.8rem; padding:4px 12px;">
+          📖 পৃষ্ঠা ৪-৮ ই-পেপার দেখুন ➔
+        </button>
+      </div>
+      <div class="anandabazar-section-grid" id="grid-desh-container" style="display: grid;">
+        <div class="anandabazar-lead-card" onclick="openArticleModal('art-103')" style="background:var(--bg-card); cursor:pointer;">
+          <div class="anandabazar-lead-thumb" style="height:250px;"><img src="12_page-0004.jpg" alt="সংবাদ" loading="lazy" /></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <span class="badge badge-crimson" style="font-size:0.75rem;">🔴 দেশ ও রাজনীতি</span>
+            <span class="badge badge-navy" style="font-size:0.72rem; cursor:pointer;" onclick="event.stopPropagation(); openEPaperModal(4);">📖 পৃষ্ঠা ৪</span>
+          </div>
+          <h3 style="font-family:var(--font-serif); font-size:1.35rem; font-weight:900; line-height:1.3; color:var(--text-1); margin:8px 0 6px 0;">ঐতিহাসিক অধ্যায়ের অবসান: নকশালমুক্ত ভারতের রূপরেখা</h3>
+          <p style="font-size:0.9rem; color:var(--text-2); line-height:1.5; margin-bottom:10px;">রেড করিডোর আজ অতীত। দেশের নিরাপত্তা ও স্বাভাবিকতায় ফেরার ঐতিহাসিক ঘোষণা।</p>
+          <div style="margin-top:auto; padding-top:8px; border-top:1px dashed var(--border-strong); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
+            <span>📅 ২৯ মার্চ ২০২৬ | অভিজ্ঞান রায়</span>
+            <span style="color:var(--crimson); font-weight:bold;">সম্পূর্ণ পড়ুন ➔</span>
+          </div>
+        </div>
+        <div class="anandabazar-side-stack">
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-108')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0005.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">জাতীয়</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(5);">📖 পৃষ্ঠা ৫</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">ভারতের উপর অভিভাবকের ভঙ্গি পরিত্যাগ করুক NYT</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২৮ মার্চ ২০২৬</span>
+            </div>
+          </div>
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-112')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0006.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">প্রতিরক্ষা</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(6);">📖 পৃষ্ঠা ৬</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">প্রতিরক্ষা ক্ষেত্রে স্বাবলম্বী ভারত: দেশীয় প্রযুক্তির সফল মহড়া</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২৮ মার্চ ২০২৬</span>
+            </div>
+          </div>
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-117')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0007.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">অর্থনীতি</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(7);">📖 পৃষ্ঠা ৭</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">অর্থনীতির নতুন রেকর্ড: জিডিপি প্রবৃদ্ধিতে বিশ্বের শীর্ষে ভারত</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২৭ মার্চ ২০২৬</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BHARAT DIARY SECTION (ভারত ডায়েরি) -->
+    <section id="section-bharat" class="category-section-block reveal">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; border-bottom:2px solid var(--navy); padding-bottom:10px;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--crimson); font-weight:bold; text-transform:uppercase; letter-spacing:1px; display:block;">এক ভারত শ্রেষ্ঠ ভারত</span>
+          <h2 class="section-title" style="margin:0; font-size:1.6rem;">ভারত ডায়েরি</h2>
+        </div>
+        <button class="epaper-btn-header vintage-btn" onclick="openEPaperModal(9)" style="font-size:0.8rem; padding:4px 12px;">
+          📖 পৃষ্ঠা ৯ ই-পেপার দেখুন ➔
+        </button>
+      </div>
+      <div class="anandabazar-section-grid" id="grid-bharat-container" style="display: grid;">
+        <div class="anandabazar-lead-card" onclick="openArticleModal('art-105')" style="background:var(--bg-card); cursor:pointer;">
+          <div class="anandabazar-lead-thumb" style="height:250px;"><img src="12_page-0009.jpg" alt="সংবাদ" loading="lazy" /></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <span class="badge badge-crimson" style="font-size:0.75rem;">🔴 ভারত ডায়েরি</span>
+            <span class="badge badge-navy" style="font-size:0.72rem; cursor:pointer;" onclick="event.stopPropagation(); openEPaperModal(9);">📖 পৃষ্ঠা ৯</span>
+          </div>
+          <h3 style="font-family:var(--font-serif); font-size:1.35rem; font-weight:900; line-height:1.3; color:var(--text-1); margin:8px 0 6px 0;">৪৮০ বছরের হিন্দু প্রতিরোধ ও স্বাধিকার আন্দোলন</h3>
+          <p style="font-size:0.9rem; color:var(--text-2); line-height:1.5; margin-bottom:10px;">ঐতিহাসিক সংগ্রামের রূপরেখা ও সাংস্কৃতিক মেলবন্ধনের ইতিহাস।</p>
+          <div style="margin-top:auto; padding-top:8px; border-top:1px dashed var(--border-strong); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
+            <span>📅 ২৬ মার্চ ২০২৬ | অনিন্দ্য চট্টোপাধ্যায়</span>
+            <span style="color:var(--crimson); font-weight:bold;">সম্পূর্ণ পড়ুন ➔</span>
+          </div>
+        </div>
+        <div class="anandabazar-side-stack">
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-110')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0013.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">সংস্কৃতি</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(13);">📖 পৃষ্ঠা ১৩</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">উত্তরপূর্ব ভারতের জনজাতি সংস্কৃতি ও মেলবন্ধন</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২৬ মার্চ ২০২৬</span>
+            </div>
+          </div>
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-115')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0008.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">পরিবেশ</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(8);">📖 পৃষ্ঠা ৮</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">হিমালয় পর্বতমালা সংরক্ষণ ও পরিবেশ সুরক্ষা বার্তা</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২৫ মার্চ ২০২৬</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. NEIGHBOURS SECTION (প্রতিবেশীর উত্থান) -->
+    <section id="section-neighbour" class="category-section-block reveal">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; border-bottom:2px solid var(--navy); padding-bottom:10px;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--crimson); font-weight:bold; text-transform:uppercase; letter-spacing:1px; display:block;">ভূ-রাজনীতি ও আন্তর্জাতিক</span>
+          <h2 class="section-title" style="margin:0; font-size:1.6rem;">প্রতিবেশীর উত্থান</h2>
+        </div>
+        <button class="epaper-btn-header vintage-btn" onclick="openEPaperModal(10)" style="font-size:0.8rem; padding:4px 12px;">
+          📖 পৃষ্ঠা ১০ ই-পেপার দেখুন ➔
+        </button>
+      </div>
+      <div class="anandabazar-section-grid" id="grid-neighbour-container" style="display: grid;">
+        <div class="anandabazar-lead-card" onclick="openArticleModal('art-106')" style="background:var(--bg-card); cursor:pointer;">
+          <div class="anandabazar-lead-thumb" style="height:250px;"><img src="12_page-0010.jpg" alt="সংবাদ" loading="lazy" /></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <span class="badge badge-crimson" style="font-size:0.75rem;">🔴 আন্তর্জাতিক</span>
+            <span class="badge badge-navy" style="font-size:0.72rem; cursor:pointer;" onclick="event.stopPropagation(); openEPaperModal(10);">📖 পৃষ্ঠা ১০</span>
+          </div>
+          <h3 style="font-family:var(--font-serif); font-size:1.35rem; font-weight:900; line-height:1.3; color:var(--text-1); margin:8px 0 6px 0;">দক্ষিণ এশিয়ায় ভূ-রাজনীতি ও সীমান্ত নিরাপত্তা</h3>
+          <p style="font-size:0.9rem; color:var(--text-2); line-height:1.5; margin-bottom:10px;">আন্তর্জাতিক সম্পর্কের নতুন সমীকরণ ও আঞ্চলিক স্থিতিশীলতা।</p>
+          <div style="margin-top:auto; padding-top:8px; border-top:1px dashed var(--border-strong); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
+            <span>📅 ২৫ মার্চ ২০২৬ | অনির্বাণ সেনগুপ্ত</span>
+            <span style="color:var(--crimson); font-weight:bold;">সম্পূর্ণ পড়ুন ➔</span>
+          </div>
+        </div>
+        <div class="anandabazar-side-stack">
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-114')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0014.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">ভূ-রাজনীতি</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(14);">📖 পৃষ্ঠা ১৪</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">মায়ানমার সীমান্ত ও বঙ্গোপসাগরে ভারতের স্ট্র্যাটেজিক পদক্ষেপ</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২৪ মার্চ ২০২৬</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. HISTORY & CULTURE SECTION (ইতিহাস ও কৃষ্টি) -->
+    <section id="section-history" class="category-section-block culture-section-wrapper reveal">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; border-bottom:2px solid var(--navy); padding-bottom:10px;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--crimson); font-weight:bold; text-transform:uppercase; letter-spacing:1px; display:block;">প্রাচীন বিজ্ঞান ও সনাতন ঐতিহ্য</span>
+          <h2 class="section-title" style="margin:0; font-size:1.6rem;">ইতিহাস ও কৃষ্টি</h2>
+        </div>
+        <button class="epaper-btn-header vintage-btn" onclick="openEPaperModal(11)" style="font-size:0.8rem; padding:4px 12px;">
+          📖 পৃষ্ঠা ১১ ই-পেপার দেখুন ➔
+        </button>
+      </div>
+      <div class="news-horizontal-list" id="horizontal-news-list">
+        <div class="news-card-h" onclick="openArticleModal('art-104')">
+          <div class="news-card-h-img"><img src="12_page-0011.jpg" alt="সংবাদ" loading="lazy" /></div>
+          <div>
+            <div style="display:flex; gap:6px; align-items:center; margin-bottom:4px;">
+              <span class="badge badge-outline" style="font-size: 0.68rem;">ইতিহাস ও কৃষ্টি</span>
+              <span class="badge badge-crimson" style="font-size: 0.65rem;" onclick="event.stopPropagation(); openEPaperModal(11);">📖 পৃষ্ঠা ১১</span>
+            </div>
+            <h4 class="news-card-h-title">আচার্য ব্রহ্মগুপ্তের গোমূত্রিকা সূত্র — প্রাচীন ভারতীয় গণিতশাস্ত্রের ইতিহাস</h4>
+            <div class="post-meta"><span>২৪ মার্চ ২০২৬</span></div>
+          </div>
+        </div>
+        <div class="news-card-h" onclick="openArticleModal('art-111')">
+          <div class="news-card-h-img"><img src="12_page-0015.jpg" alt="সংবাদ" loading="lazy" /></div>
+          <div>
+            <div style="display:flex; gap:6px; align-items:center; margin-bottom:4px;">
+              <span class="badge badge-outline" style="font-size: 0.68rem;">ঐতিহ্য</span>
+              <span class="badge badge-crimson" style="font-size: 0.65rem;" onclick="event.stopPropagation(); openEPaperModal(15);">📖 পৃষ্ঠা ১৫</span>
+            </div>
+            <h4 class="news-card-h-title">আজাদ হিন্দ ফৌজ ও প্রাচীন তাম্রলিপ্ত বন্দরের ঐতিহাসিক অবদান</h4>
+            <div class="post-meta"><span>২৩ মার্চ ২০২৬</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. EDITORIAL & OPINION SECTION (আপনার দৃষ্টি) -->
+    <section id="section-opinion" class="category-section-block reveal">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; border-bottom:2px solid var(--navy); padding-bottom:10px;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--crimson); font-weight:bold; text-transform:uppercase; letter-spacing:1px; display:block;">পাঠক মতামত ও মতামত স্তম্ভ</span>
+          <h2 class="section-title" style="margin:0; font-size:1.6rem;">আপনার দৃষ্টি & সম্পাদকীয় কলাম</h2>
+        </div>
+        <button class="epaper-btn-header vintage-btn" onclick="openEPaperModal(12)" style="font-size:0.8rem; padding:4px 12px;">
+          📖 পৃষ্ঠা ১২ ই-পেপার দেখুন ➔
+        </button>
+      </div>
+
+      <div class="editorial-pick-card" style="margin-bottom:20px;">
+        <span class="badge badge-crimson" style="margin-bottom: 10px;">সম্পাদকীয় কলাম</span>
+        <h3 class="editorial-quote-title">সত্যের সন্ধানে বাংলা ও সনাতন সংস্কৃতির অবিকল প্রতিধ্বনি</h3>
+        <blockquote class="editorial-quote-text">
+          "নিরপেক্ষ সাংবাদিকতা কোনো পণ্য নয়, তা সমাজের আত্মবিশ্বাস ও কৃষ্টির প্রকৃত দর্পণ। বঙ্গধ্বনি সংবাদপত্র ও ডিজিটাল জার্নাল সর্বদাই বাঙালি মনীর্ষা ও অধিকার সুরক্ষায় আপসহীন।"
+        </blockquote>
+        <div style="font-size: 0.9rem; color: var(--text-2); font-weight: 700;">
+          — দেবজ্যোতি চক্রবর্তী, প্রধান সম্পাদক, বঙ্গধ্বনি
+        </div>
+      </div>
+
+      <div class="anandabazar-section-grid" id="grid-opinion-container" style="display: grid;">
+        <div class="anandabazar-lead-card" onclick="openArticleModal('art-109')" style="background:var(--bg-card); cursor:pointer;">
+          <div class="anandabazar-lead-thumb" style="height:250px;"><img src="12_page-0012.jpg" alt="সংবাদ" loading="lazy" /></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <span class="badge badge-crimson" style="font-size:0.75rem;">🔴 সম্পাদকীয়</span>
+            <span class="badge badge-navy" style="font-size:0.72rem; cursor:pointer;" onclick="event.stopPropagation(); openEPaperModal(12);">📖 পৃষ্ঠা ১২</span>
+          </div>
+          <h3 style="font-family:var(--font-serif); font-size:1.35rem; font-weight:900; line-height:1.3; color:var(--text-1); margin:8px 0 6px 0;">সত্যের সন্ধানে বাংলা ও সনাতন সংস্কৃতির প্রতিধ্বনি</h3>
+          <p style="font-size:0.9rem; color:var(--text-2); line-height:1.5; margin-bottom:10px;">বাঙালি কৃষ্টি ও ঐতিহ্যের মূল ধারা রক্ষা করার অঙ্গীকার।</p>
+          <div style="margin-top:auto; padding-top:8px; border-top:1px dashed var(--border-strong); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
+            <span>📅 ২৩ মার্চ ২০২৬ | দেবজ্যোতি চক্রবর্তী</span>
+            <span style="color:var(--crimson); font-weight:bold;">সম্পূর্ণ পড়ুন ➔</span>
+          </div>
+        </div>
+        <div class="anandabazar-side-stack">
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-113')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0015.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">মতামত</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(15);">📖 পৃষ্ঠা ১৫</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">শিক্ষা ও মূল্যবোধের নৈতিক রূপরেখা</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২২ মার্চ ২০২৬</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. RECOMMENDED NEWS FEED SECTION (সুপারিশকৃত খবর ও বিশেষ আপডেট) -->
+    <section id="section-recommended" class="category-section-block reveal" style="background:var(--bg-card); padding:20px; border-radius:var(--radius-sm); border:1px solid var(--border-strong); margin-bottom:28px;">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; border-bottom:2px solid var(--crimson); padding-bottom:10px;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--crimson); font-weight:bold; text-transform:uppercase; letter-spacing:1px; display:block;">পাঠকদের জন্য বিশেষ পছন্দ</span>
+          <h2 class="section-title" style="margin:0; font-size:1.6rem; color:var(--crimson);">সুপারিশকৃত খবর ও সাম্প্রতিক আপডেট</h2>
+        </div>
+        <span class="badge badge-crimson" style="font-size:0.8rem; padding:4px 12px;">🔥 বিশেষ ফিড</span>
+      </div>
+
+      <div class="anandabazar-section-grid" id="grid-recommended-container" style="display: grid;">
+        <div class="anandabazar-lead-card" onclick="openArticleModal('art-108')" style="background:var(--bg-card); cursor:pointer;">
+          <div class="anandabazar-lead-thumb" style="height:250px;"><img src="12_page-0005.jpg" alt="সংবাদ" loading="lazy" /></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <span class="badge badge-crimson" style="font-size:0.75rem;">🔥 বিশেষ সুপার সুপারিশ</span>
+            <span class="badge badge-navy" style="font-size:0.72rem; cursor:pointer;" onclick="event.stopPropagation(); openEPaperModal(5);">📖 পৃষ্ঠা ৫</span>
+          </div>
+          <h3 style="font-family:var(--font-serif); font-size:1.35rem; font-weight:900; line-height:1.3; color:var(--text-1); margin:8px 0 6px 0;">ভারতের উপর অভিভাবকের ভঙ্গি পরিত্যাগ করুক NYT</h3>
+          <p style="font-size:0.9rem; color:var(--text-2); line-height:1.5; margin-bottom:10px;">আন্তর্জাতিক সংবাদমাধ্যমের পক্ষপাতদুষ্ট রিপোর্টিংয়ের কড়া জবাব দিল বিচারব্যবস্থা।</p>
+          <div style="margin-top:auto; padding-top:8px; border-top:1px dashed var(--border-strong); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
+            <span>📅 ২৮ মার্চ ২০২৬ | কৌশিক গঙ্গোপাধ্যায়</span>
+            <span style="color:var(--crimson); font-weight:bold;">সম্পূর্ণ পড়ুন ➔</span>
+          </div>
+        </div>
+        <div class="anandabazar-side-stack">
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-112')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0006.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">প্রতিরক্ষা</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(6);">📖 পৃষ্ঠা ৬</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">প্রতিরক্ষা ক্ষেত্রে স্বাবলম্বী ভারত: দেশীয় প্রযুক্তির সফল মহড়া</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২৮ মার্চ ২০২৬</span>
+            </div>
+          </div>
+          <div class="anandabazar-side-item" onclick="openArticleModal('art-117')" style="cursor:pointer;">
+            <div class="anandabazar-side-thumb"><img src="12_page-0007.jpg" alt="সংবাদ" loading="lazy" /></div>
+            <div style="flex-grow: 1;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="badge badge-navy" style="font-size:0.65rem;">অর্থনীতি</span>
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(7);">📖 পৃষ্ঠা ৭</span>
+              </div>
+              <h4 style="font-family:var(--font-serif); font-size:0.95rem; font-weight:800; color:var(--text-1); line-height:1.35; margin-bottom:4px;">অর্থনীতির নতুন রেকর্ড: জিডিপি প্রবৃদ্ধিতে বিশ্বের শীর্ষে ভারত</h4>
+              <span style="font-size:0.74rem; color:var(--text-muted);">📅 ২৭ মার্চ ২০২৬</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM WIDGETS — 3 COLUMN ROW -->
+    <div class="bottom-widgets-grid">
+
+      <!-- NEXT-LEVEL TRENDING NEWS WIDGET -->
+      <div class="widget-card widget-card-nextlevel reveal">
+        <div class="trending-header-bar">
+          <span class="badge-vintage-gold">🔥 ডিজিটাল ট্রেন্ডিং</span>
+          <h3 class="widget-title-nextlevel">সবচেয়ে বেশি পঠিত সংবাদ</h3>
+        </div>
+        <div class="trending-list" id="trending-widget-list">
+          <!-- Rank #1 -->
+          <div class="trending-item" onclick="openArticleModal('art-101')" style="display:flex; gap:12px; align-items:center; padding:10px; border-bottom:1px solid var(--border); cursor:pointer;">
+            <div class="rank-badge rank-1" style="font-family:var(--font-serif); font-size:1.3rem; font-weight:900; color:#D4AF37; width:34px; height:34px; background:rgba(212,175,55,0.12); border:1px solid #D4AF37; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">১</div>
+            <div class="trending-thumb" style="width:70px; height:55px; border-radius:4px; overflow:hidden; flex-shrink:0;"><img src="12_page-0001.jpg" alt="সংবাদ" style="width:100%; height:100%; object-fit:cover;" /></div>
+            <div style="flex-grow:1;">
+              <h4 style="font-family:var(--font-serif); font-size:0.92rem; font-weight:800; color:var(--text-1); line-height:1.3; margin-bottom:4px;">জেসাস করিডর: ধর্মান্তরের রাজনীতি ও ভারতের সাংস্কৃতিক নিরাপত্তা</h4>
+              <div style="display:flex; justify-content:flex-end; align-items:center; font-size:0.72rem; color:var(--text-muted);">
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(1);">📖 পৃষ্ঠা ১</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rank #2 -->
+          <div class="trending-item" onclick="openArticleModal('art-102')" style="display:flex; gap:12px; align-items:center; padding:10px; border-bottom:1px solid var(--border); cursor:pointer;">
+            <div class="rank-badge rank-2" style="font-family:var(--font-serif); font-size:1.3rem; font-weight:900; color:#8B1818; width:34px; height:34px; background:rgba(139,24,24,0.1); border:1px solid #8B1818; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">২</div>
+            <div class="trending-thumb" style="width:70px; height:55px; border-radius:4px; overflow:hidden; flex-shrink:0;"><img src="12_page-0002.jpg" alt="সংবাদ" style="width:100%; height:100%; object-fit:cover;" /></div>
+            <div style="flex-grow:1;">
+              <h4 style="font-family:var(--font-serif); font-size:0.92rem; font-weight:800; color:var(--text-1); line-height:1.3; margin-bottom:4px;">মদন-বাণে চাপে অভিষেক, এবার আইনি নোটিসের পথ!</h4>
+              <div style="display:flex; justify-content:flex-end; align-items:center; font-size:0.72rem; color:var(--text-muted);">
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(2);">📖 পৃষ্ঠা ২</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rank #3 -->
+          <div class="trending-item" onclick="openArticleModal('art-103')" style="display:flex; gap:12px; align-items:center; padding:10px; border-bottom:1px solid var(--border); cursor:pointer;">
+            <div class="rank-badge rank-3" style="font-family:var(--font-serif); font-size:1.3rem; font-weight:900; color:#1B365D; width:34px; height:34px; background:rgba(27,54,93,0.1); border:1px solid #1B365D; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">৩</div>
+            <div class="trending-thumb" style="width:70px; height:55px; border-radius:4px; overflow:hidden; flex-shrink:0;"><img src="12_page-0004.jpg" alt="সংবাদ" style="width:100%; height:100%; object-fit:cover;" /></div>
+            <div style="flex-grow:1;">
+              <h4 style="font-family:var(--font-serif); font-size:0.92rem; font-weight:800; color:var(--text-1); line-height:1.3; margin-bottom:4px;">ঐতিহাসিক অধ্যায়ের অবসান: নকশালমুক্ত ভারতের রূপরেখা</h4>
+              <div style="display:flex; justify-content:flex-end; align-items:center; font-size:0.72rem; color:var(--text-muted);">
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(4);">📖 পৃষ্ঠা ৪</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rank #4 -->
+          <div class="trending-item" onclick="openArticleModal('art-107')" style="display:flex; gap:12px; align-items:center; padding:10px; border-bottom:1px solid var(--border); cursor:pointer;">
+            <div class="rank-badge rank-4" style="font-family:var(--font-serif); font-size:1.3rem; font-weight:900; color:var(--text-2); width:34px; height:34px; background:var(--bg-quote); border:1px solid var(--border-strong); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">৪</div>
+            <div class="trending-thumb" style="width:70px; height:55px; border-radius:4px; overflow:hidden; flex-shrink:0;"><img src="12_page-0003.jpg" alt="সংবাদ" style="width:100%; height:100%; object-fit:cover;" /></div>
+            <div style="flex-grow:1;">
+              <h4 style="font-family:var(--font-serif); font-size:0.92rem; font-weight:800; color:var(--text-1); line-height:1.3; margin-bottom:4px;">অথ দেবরাজ কথা — জামিন খারিজ সিআইডি হেফাজতে</h4>
+              <div style="display:flex; justify-content:flex-end; align-items:center; font-size:0.72rem; color:var(--text-muted);">
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(3);">📖 পৃষ্ঠা ৩</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rank #5 -->
+          <div class="trending-item" onclick="openArticleModal('art-108')" style="display:flex; gap:12px; align-items:center; padding:10px; cursor:pointer;">
+            <div class="rank-badge rank-5" style="font-family:var(--font-serif); font-size:1.3rem; font-weight:900; color:var(--text-2); width:34px; height:34px; background:var(--bg-quote); border:1px solid var(--border-strong); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">৫</div>
+            <div class="trending-thumb" style="width:70px; height:55px; border-radius:4px; overflow:hidden; flex-shrink:0;"><img src="12_page-0005.jpg" alt="সংবাদ" style="width:100%; height:100%; object-fit:cover;" /></div>
+            <div style="flex-grow:1;">
+              <h4 style="font-family:var(--font-serif); font-size:0.92rem; font-weight:800; color:var(--text-1); line-height:1.3; margin-bottom:4px;">ভারতের উপর অভিভাবকের ভঙ্গি পরিত্যাগ করুক NYT</h4>
+              <div style="display:flex; justify-content:flex-end; align-items:center; font-size:0.72rem; color:var(--text-muted);">
+                <span class="badge badge-outline" style="font-size:0.65rem; border-color:#8B1818; color:#8B1818;" onclick="event.stopPropagation(); openEPaperModal(5);">📖 পৃষ্ঠা ৫</span>
+              </div>
+            </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- NEXT-LEVEL VINTAGE RETRO E-PAPER SHOWCASE WIDGET -->
+      <div class="epaper-widget-card epaper-widget-nextlevel reveal">
+        <div class="epaper-card-gold-corner top-left"></div>
+        <div class="epaper-card-gold-corner top-right"></div>
+        
+        <div class="epaper-card-header">
+          <span class="badge-vintage-gold">✦ ১৬ পৃষ্ঠার ডিজিটাল প্রিন্ট সংস্করণ ✦</span>
+          <h3 class="epaper-card-title">বঙ্গধ্বনি ই-পেপার রিডার</h3>
+          <p class="epaper-card-subtitle">মুদ্রিত খবরের কাগজের অবিকল ১৬টি পৃষ্ঠা উচ্চমানের এইচডি স্ক্যানে হাই-স্পিড ই-পেপারে পড়ুন।</p>
+        </div>
+
+        <!-- 3D Layered Newspaper Stack Preview -->
+        <div class="epaper-3d-stack-wrapper" onclick="openEPaperModal(1)" title="১৬ পৃষ্ঠার ই-পেপার খুলুন">
+          <div class="epaper-stack-layer layer-3"></div>
+          <div class="epaper-stack-layer layer-2"></div>
+          <div class="epaper-stack-layer layer-1">
+            <img src="12_page-0001.jpg" alt="বঙ্গধ্বনি ই-পেপার প্রথম পৃষ্ঠা" class="epaper-real-page-scan" />
+            <div class="epaper-page-curl-corner"></div>
+            <div class="epaper-live-badge">🔴 পৃষ্ঠা ১ / ১৬</div>
+          </div>
+        </div>
+
+        <!-- Quick Jump Page Pills -->
+        <div class="epaper-quick-page-pills">
+          <button onclick="openEPaperModal(1)" class="epaper-page-pill active">প্রচ্ছদ (১)</button>
+          <button onclick="openEPaperModal(2)" class="epaper-page-pill">রাজ্য (২-৩)</button>
+          <button onclick="openEPaperModal(4)" class="epaper-page-pill">দেশ (৪-৮)</button>
+          <button onclick="openEPaperModal(9)" class="epaper-page-pill">ভারত (৯)</button>
+          <button onclick="openEPaperModal(10)" class="epaper-page-pill">বিদেশ (১০)</button>
+          <button onclick="openEPaperModal(11)" class="epaper-page-pill">কৃষ্টি (১১)</button>
+        </div>
+
+        <button class="btn-epaper-launch-nextlevel" onclick="openEPaperModal(1)">
+          <span>📖 সম্পূর্ণ ১৬ পৃষ্ঠার ই-পেপার খুলুন ➔</span>
+        </button>
+      </div>
+
+      <!-- NEXT-LEVEL WHATSAPP TIP & HOTLINE WIDGET -->
+      <div class="tip-widget tip-widget-nextlevel reveal">
+        <div class="tip-card-gold-corner top-left"></div>
+        <div class="tip-card-gold-corner top-right"></div>
+        <div class="tip-card-gold-corner bottom-left"></div>
+        <div class="tip-card-gold-corner bottom-right"></div>
+        
+        <div class="tip-header">
+          <span class="badge-vintage-emerald">● ২৪×৭ নাগরিক হেল্পলাইন</span>
+          <h3 class="tip-widget-title">আপনার দৃষ্টি (খবর পাঠান)</h3>
+          <p class="tip-desc">আপনার এলাকার যেকোনো অন্যায়, দুর্নীতি, সামাজিক ঘটনা বা তথ্যের ছবি বা ভিডিও সরাসরি বঙ্গধ্বনি বার্তা কক্ষে জানান।</p>
+        </div>
+
+        <div class="tip-features-list">
+          <div class="tip-feature-item">
+            <span class="tip-feature-icon">📸</span>
+            <span>ছবি বা শর্ট ভিডিও সরাসরি পাঠাতে পারেন</span>
+          </div>
+          <div class="tip-feature-item">
+            <span class="tip-feature-icon">🛡️</span>
+            <span>প্রেরকের পরিচয় সম্পূর্ণ গোপন রাখা হবে</span>
+          </div>
+          <div class="tip-feature-item">
+            <span class="tip-feature-icon">⚡</span>
+            <span>তথ্য যাচাইয়ের পর দ্রুত প্রকাশনার নিশ্চয়তা</span>
+          </div>
+        </div>
+
+        <button class="btn-whatsapp-tip-nextlevel" onclick="openWhatsAppTip()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>WhatsApp-এ বার্তা পাঠান ➔</span>
+        </button>
+
+        <!-- Aesthetic Bottom Emergency Contacts & Editorial Verification Box -->
+        <div class="tip-aesthetic-bottom-box">
+          <div class="tip-contact-row">
+            <span>📞 সরাসরি ফোন: <strong>+৯১-৯৮৩৬৯৭৮৮২৬</strong></span>
+          </div>
+          <div class="tip-contact-row">
+            <span>📧 ই-মেইল: <strong>bangadhwanisangbad@gmail.com</strong></span>
+          </div>
+          <div class="tip-category-tags">
+            <span class="tip-tag">দুর্নীতি সেল</span>
+            <span class="tip-tag">দুর্ঘটনা ও আবহাওয়া</span>
+            <span class="tip-tag">স্থানীয় সমস্যা</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <img src="logo.png" style="width: 36px; height: 36px; object-fit: contain; border-radius: 6px; flex-shrink: 0;" alt="বঙ্গধ্বনি লোগো" />
+            <img src="sangh_logo.png" style="width: 36px; height: 36px; object-fit: contain; border-radius: 6px; flex-shrink: 0;" title="জাতীয় লেখক সংঘ" alt="জাতীয় লেখক সংঘ" draggable="false" />
+            <div class="footer-brand" style="margin-bottom: 0;">বঙ্গধ্বনি</div>
+          </div>
+          <p style="font-size: 0.9rem; margin-bottom: 14px; color: #94A3B8; line-height: 1.7;">সনাতন বঙ্গের সনাতন ধ্বনি। অর্থনৈতিক ও সাংস্কৃতিক ফাউন্ডেশন দ্বারা পরিচালিত স্বাধীন ও নিরপেক্ষ বাংলা সংবাদপত্র।</p>
+          <p style="font-size: 0.84rem; color: #64748B; line-height: 1.6;">প্রকাশক: বঙ্গপ্রতিনিধি ইকোনোমিক অ্যান্ড কালচারাল ফাউন্ডেশন | জাতীয় লেখক সংঘ<br>ই-মেইল: bangadhwanisangbad@gmail.com</p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">বিভাগসমূহ</h4>
+          <ul class="footer-links-list">
+            <li><a href="#" onclick="filterCategoryByFooter('all')">প্রচ্ছদ</a></li>
+            <li><a href="#" onclick="filterCategoryByFooter('rajya')">রাজ্য-রাজধানী</a></li>
+            <li><a href="#" onclick="filterCategoryByFooter('desh')">দেশ ও রাজনীতি</a></li>
+            <li><a href="#" onclick="filterCategoryByFooter('bharat')">ভারত ডায়েরি</a></li>
+            <li><a href="#" onclick="filterCategoryByFooter('history')">ইতিহাস ও কৃষ্টি</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">ডিজিটাল সেবা</h4>
+          <ul class="footer-links-list">
+            <li><a href="#" onclick="openEPaperModal(1); return false;">ই-পেপার (১৬ পৃষ্ঠা)</a></li>
+            <li><a href="admin.html" target="_blank">এডমিন পোর্টাল</a></li>
+            <li><a href="#" onclick="openSearchModal(); return false;">সংবাদ সন্ধান</a></li>
+            <li><a href="#" onclick="openWhatsAppTip(); return false;">খবর পাঠান</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">যোগাযোগ ও হেল্পলাইন</h4>
+          <p style="font-size: 0.9rem; line-height: 1.7; color: #CBD5E1; margin-bottom: 12px;">
+            মতামত ও সংবাদ পাঠাতে ফোন বা WhatsApp করুন:<br>
+            <strong style="color: #FFD700; font-size: 1.1rem;">+৯১-৯৮৩৬৯৭৮৮২৬</strong><br>
+            <small style="color: #64748B;">পরিচয় প্রকাশন | ৬৬/বি, মানিকতলা স্ট্রিট, কলকাতা-৭০০০০৬</small>
+          </p>
+
+          <div style="display: flex; align-items: center; gap: 12px; background: rgba(249, 115, 22, 0.08); padding: 8px 14px; border-radius: var(--radius-xs); border: 1px solid rgba(249, 115, 22, 0.3);">
+            <img src="sangh_logo.png" class="sangh-glow-logo" style="width: 44px !important; height: 44px !important; max-width: 44px !important; max-height: 44px !important; border-radius: 50%; border: 2px solid #F97316; box-shadow: 0 0 14px #F97316, 0 0 26px rgba(249, 115, 22, 0.4); object-fit: contain; flex-shrink: 0;" title="জাতীয় লেখক সংঘ" alt="জাতীয় লেখক সংঘ" draggable="false" />
+            <div>
+              <strong style="font-size: 0.85rem; color: #F97316; font-family: var(--font-serif); display: block;">জাতীয় লেখক সংঘ</strong>
+              <small style="font-size: 0.74rem; color: #94A3B8;">সাংস্কৃতিক ও সাহিত্যিক সমন্বয়</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;" onclick="openCopyrightModal()" title="বঙ্গধ্বনি কপিরাইট ও আইনগত স্বত্বাধিকার তথ্য জানতে ক্লিক করুন">
+        <div>© ২০২৬ 'বঙ্গধ্বনি' (Bongodhoni) ডিজিটাল মিডিয়া গ্রুপ। সর্বস্বত্ব সংরক্ষিত।</div>
+        <button class="badge badge-outline" style="cursor: pointer; font-weight: bold; border-color: #FFD700; color: #FFD700; padding: 4px 12px; font-size: 0.78rem;">
+          📜 আইনগত স্বত্বাধিকার ও কপিরাইট শর্তাবলী ➔
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DEDICATED LEGAL COPYRIGHT & INTELLECTUAL PROPERTY MODAL -->
+  <div class="modal-backdrop" id="copyright-modal-backdrop">
+    <div class="legal-modal-container">
+      <div class="legal-modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.8rem;">⚖️</span>
+          <div>
+            <h2 style="font-family: var(--font-serif); font-size: 1.25rem; color: #FFD700; margin: 0;">বঙ্গধ্বনি মিডিয়া গ্রুপ — আইনগত স্বত্বাধিকার ও কপিরাইট ঘোষণা</h2>
+            <small style="color: #CBD5E1; font-size: 0.76rem;">কপিরাইট আইন ১৯৫৭ এবং তথ্যপ্রযুক্তি আইন ২০০০ (IT Act 2000) অনুযায়ী সংবিধিবদ্ধ সতর্কবার্তা</small>
+          </div>
+        </div>
+        <button class="btn-icon" onclick="closeCopyrightModal()" style="font-size: 1.4rem; color: #FFF;">✕</button>
+      </div>
+
+      <div class="legal-modal-body">
+        <div class="legal-section-block">
+          <h3>১. স্বত্বাধিকার ও কপিরাইট আইনগত সুরক্ষা (Copyright Protection)</h3>
+          <p>
+            'বঙ্গধ্বনি' (Bongodhoni) ডিজিটাল সংবাদপত্র, দৈনিক ও সাপ্তাহিক মুদ্রিত সংস্করণ, ১৬ পৃষ্ঠার ই-পেপার এইচডি স্ক্যান কপি, লোগো, গ্রাফিক্স, সংবাদ শৈলী এবং ওয়েবসাইটের যাবতীয় বিষয়বস্তু <strong>ভারতীয় কপিরাইট আইন, ১৯৫৭ (Copyright Act, 1957)</strong> এবং আন্তর্জাতিক কপিরাইট কনভেনশন দ্বারা সম্পূর্ণ সুরক্ষিত।
+          </p>
+        </div>
+
+        <div class="legal-section-block">
+          <h3>২. অননুমোদিত ব্যবহারের ওপর কড়া নিষেধাজ্ঞা (Re-publication Restrictions)</h3>
+          <p>
+            'বঙ্গধ্বনি' পত্রিকার সম্পাদক মণ্ডলীর লিখিত পূর্বানুমতি ছাড়া এই ওয়েবসাইটের কোনো সংবাদ, ই-পেপার স্ক্যান কপি, ফটো বা নিবন্ধ কোনো সামাজিক মাধ্যম (Facebook, WhatsApp, Telegram, YouTube ইত্যাদি), সংবাদপত্র, ডিজিটাল ব্লগ বা ওয়েবসাইটে আংশিক বা পূর্ণাঙ্গ রূপে অনুলিপি, পুনর্মুদ্রণ, রি-আপলোড বা বাণিজ্যিক উদ্দেশ্যে প্রচার করা সম্পূর্ণ আইনি অপরাধ।
+          </p>
+        </div>
+
+        <div class="legal-section-block">
+          <h3>৩. ট্রেডমার্ক ও বুদ্ধিবৃত্তিক সম্পদ (Trademark & IP Rights)</h3>
+          <p>
+            'বঙ্গধ্বনি' (Bongodhoni) নামটি বঙ্গপ্রতিনিধি ইকোনোমিক অ্যান্ড কালচারাল ফাউন্ডেশন এবং জাতীয় লেখক সংঘের নিবন্ধিত ট্রেডমার্ক। কোনো ব্যক্তি বা প্রতিষ্ঠান এই নাম, প্রতীক বা লোগো ব্যবহার করে বিভ্রান্তি সৃষ্টি করলে তা বুদ্ধিবৃত্তিক সম্পদ লঙ্ঘন (Intellectual Property Infringement) হিসেবে বিবেচিত হবে।
+          </p>
+        </div>
+
+        <div class="legal-section-block warning-block">
+          <h3>৪. আইনগত পদক্ষেপ ও ক্ষতিপূরণ (Legal Action & Civil/Criminal Liability)</h3>
+          <p>
+            কপিরাইট লঙ্ঘন, ডিজিটাল পাইরেসি বা অনুমতি ছাড়া ই-পেপার ও ফাইল বাণিজ্যিকভাবে বিতরণ করা হলে <strong>তথ্যপ্রযুক্তি আইন ২০০০ (IT Act 2000 - Section 66)</strong> এবং দেওয়ানি ও ফৌজদারি আদালতে অনতিবিলম্বে ক্ষতিপূরণ দাবি সহ আইনি মামলা দায়ের করা হবে।
+          </p>
+        </div>
+
+        <div class="legal-section-block">
+          <h3>৫. প্রকাশনা রেজিস্ট্রি ও আইনগত পরামর্শদাতা (Registration & Counsel)</h3>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: var(--text-2);">
+            <li>🏛️ <strong>প্রকাশক:</strong> বঙ্গপ্রতিনিধি ইকোনোমিক অ্যান্ড কালচারাল ফাউন্ডেশন</li>
+            <li>📚 <strong>সহ-উদ্যোগ:</strong> জাতীয় লেখক সংঘ (কেন্দ্রীয় কমিটি)</li>
+            <li>⚖️ <strong>আইনগত পরামর্শদাতা:</strong> লিগ্যাল কেয়ার অ্যাসোসিয়েটস, হাইকোর্ট ক্যালকাটা</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="legal-modal-footer">
+        <button class="btn-legal-accept" onclick="closeCopyrightModal()">
+          আমি আইনগত শর্তাবলীতে অবগত ও সম্মত (বন্ধ করুন)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- E-PAPER MODAL CONTAINER -->
+  <div class="modal-backdrop" id="epaper-modal-backdrop">
+    <div class="epaper-modal-container">
+      <div class="epaper-modal-header">
+        <div class="epaper-modal-title">
+          <span style="color: #FFD700; font-weight: bold; font-family: var(--font-serif); font-size: 1.4rem;">বঙ্গধ্বনি</span> 
+          <span>ডিজিটাল ই-পেপার</span>
+        </div>
+
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <button class="btn-icon" onclick="prevEPaperPage()">◄ পূর্ববর্তী</button>
+          <select id="epaper-page-select" style="background: rgba(15,20,25,0.8); color: #FFD700; border: 1px solid rgba(255,215,0,0.3); padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; outline: none; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.5); backdrop-filter: blur(10px); transition: all 0.3s ease;" onfocus="this.style.borderColor='#FFD700'; this.style.boxShadow='0 0 15px rgba(255,215,0,0.4)';" onblur="this.style.borderColor='rgba(255,215,0,0.3)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.5)';" onchange="switchEPaperPage(parseInt(this.value))">
+            <option value="0">পৃষ্ঠা ১ (প্রচ্ছদ)</option>
+            <option value="1">পৃষ্ঠা ২ (রাজ্য-রাজধানী)</option>
+            <option value="2">পৃষ্ঠা ৩ (রাজ্য)</option>
+            <option value="3">পৃষ্ঠা ৪ (দেশ)</option>
+            <option value="4">পৃষ্ঠা ৫ (দেশ ও বিশ্ব)</option>
+            <option value="5">পৃষ্ঠা ৬ (প্রতিরক্ষা)</option>
+            <option value="6">পৃষ্ঠা ৭ (বাণিজ্য ও অর্থনীতি)</option>
+            <option value="7">পৃষ্ঠা ৮ (খেলাধুলা)</option>
+            <option value="8">পৃষ্ঠা ৯ (ভারত ডায়েরি)</option>
+            <option value="9">পৃষ্ঠা ১০ (প্রতিবেশীর উত্থান)</option>
+            <option value="10">পৃষ্ঠা ১১ (ইতিহাস ও কৃষ্টি)</option>
+            <option value="11">পৃষ্ঠা ১২ (আপনার দৃষ্টি)</option>
+            <option value="12">পৃষ্ঠা ১৩ (বিশেষ নিবন্ধ)</option>
+            <option value="13">পৃষ্ঠা ১৪ (সমাজ ও ঐতিহ্য)</option>
+            <option value="14">পৃষ্ঠা ১৫ (লাইফস্টাইল ও সাহিত্য)</option>
+            <option value="15">পৃষ্ঠা ১৬ (শেষ প্রচ্ছদ)</option>
+          </select>
+          <button class="btn-icon" onclick="nextEPaperPage()">পরবর্তী ►</button>
+          
+          <button class="btn-icon" onclick="zoomInEPaper()">🔍+</button>
+          <button class="btn-icon" onclick="zoomOutEPaper()">🔍-</button>
+          <button class="btn-icon" onclick="downloadEPaperPDF()" style="color:#64B5F6; font-weight:bold;">📥 PDF প্রিন্ট</button>
+          <button class="btn-icon" onclick="closeEPaperModal()" style="font-size:1.3rem; margin-left:8px;">✕</button>
+        </div>
+      </div>
+
+      <div class="epaper-modal-body">
+        <div class="epaper-thumbs-sidebar" id="epaper-thumbs-container"></div>
+        <div class="epaper-stage-view" id="epaper-stage"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE READING MODAL WITH FONT RESIZER -->
+  <div class="modal-backdrop" id="article-modal-backdrop">
+    <div class="article-modal" id="article-modal-content"></div>
+  </div>
+
+  <!-- SEARCH NEWS MODAL -->
+  <div class="modal-backdrop" id="search-modal-backdrop">
+    <div class="article-modal" style="max-width: 680px; padding: 32px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 2px solid var(--crimson); padding-bottom: 12px;">
+        <h3 style="font-family: var(--font-serif); color: var(--crimson); font-size: 1.3rem; display: flex; align-items: center; gap: 8px;">
+          🔍 বঙ্গধ্বনি সংবাদ সন্ধান (Live Search)
+        </h3>
+        <button class="btn-icon" onclick="closeSearchModal()" style="font-size: 1.4rem;">✕</button>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <input 
+          type="text" 
+          id="search-input-field" 
+          placeholder="খবরের শিরোনাম বা মূলশব্দ দিয়ে খুঁজুন (যেমন: রাম নবমী, নকশাল, গণিত)..." 
+          oninput="handleSearchInput(this.value)"
+          style="width: 100%; padding: 12px 16px; border-radius: var(--radius-xs); border: 1px solid var(--border-strong); background: var(--bg-card); color: var(--text-1); font-size: 1rem; outline: none;"
+          autofocus
+        />
+      </div>
+
+      <div id="search-results-container" style="max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px;">
+        <p style="color: var(--text-3); font-size: 0.9rem; text-align: center; padding: 24px;">🔍 আপনার অনুসন্ধানের শব্দ টাইপ করুন...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="cms-store.js"></script>
+  <script src="app.js"></script>
+  <script src="epaper.js"></script>
+  <script src="logo3d.js"></script>
+</body>
+</html>
