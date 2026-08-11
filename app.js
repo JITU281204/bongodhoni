@@ -17,8 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
   setupThemeToggle();
   initScrollReveal();
   
-  // Initialize SPA default view
-  handleCategoryNav("all");
+  // Initialize SPA default view based on URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const sectionParam = urlParams.get('section');
+  if (sectionParam) {
+    handleCategoryNav(sectionParam, null);
+  } else {
+    handleCategoryNav("all");
+  }
 });
 
 function renderAllCategorySections() {
@@ -472,7 +478,19 @@ function handleCategoryNav(categoryKey, btnEl) {
   // Update active nav link state
   const links = document.querySelectorAll(".nav-link");
   links.forEach(l => l.classList.remove("active"));
-  if (btnEl) btnEl.classList.add("active");
+  if (btnEl) {
+    btnEl.classList.add("active");
+  } else {
+    // Find the correct link if btnEl is not provided (e.g., on page load)
+    const activeLink = Array.from(links).find(l => l.getAttribute("onclick") && l.getAttribute("onclick").includes("'" + categoryKey + "'"));
+    if (activeLink) activeLink.classList.add("active");
+  }
+
+  // Update URL to give the illusion of different pages (Sub-domain effect)
+  const newUrl = (categoryKey === 'all' || categoryKey === 'prochhod') 
+    ? window.location.pathname 
+    : "?section=" + categoryKey;
+  window.history.pushState({ path: newUrl }, '', newUrl);
 
   // Hide all sections
   const sections = document.querySelectorAll(".category-section-block, .ticker-wrapper, #horizontal-news-list-container, #trending-widget-container, #section-recommended");
