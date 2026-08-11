@@ -39,54 +39,39 @@
     </div>
   </div>
 
-  <!-- CLASSIC VINTAGE RETRO NEWSPAPER MASTHEAD (DOUBLE RULES & EARPIECES) -->
-  <header class="brand-header vintage-newspaper-header">
-    <div class="container brand-header-content">
-      
-      <div class="vintage-masthead-grid">
-        <!-- Left Earpiece Box -->
-        <div class="earpiece-box earpiece-left">
-          <div class="earpiece-title">সনাতন দর্পণ</div>
-          <div class="earpiece-detail">বর্ষ: ১ | সংখ্যা: ৪৫</div>
-          <div class="earpiece-detail">মূল্য: ১০ আনা / ₹১০</div>
-          <div class="vintage-stamp-sm">স্থাপিত ১৯৪৫</div>
+  <!-- NEW VINTAGE BANNER -->
+  <header class="brand-header new-banner-header">
+    <div class="new-banner-container">
+      <div class="new-banner-grid">
+        
+        <!-- Left Logo -->
+        <div class="banner-logo-left">
+          <img src="sangh_logo.png" alt="রাষ্ট্রীয় লেখক সংঘ" onerror="this.style.display='none'">
         </div>
-
-        <!-- Center Main Title Area -->
-        <div class="brand-logo-area">
-          <a href="index.html" class="logo-anchor" aria-label="বঙ্গধ্বনি — হোমপেজ">
-            <div class="brand-logo-wrapper">
-              <img src="logo.png" alt="বঙ্গধ্বনি লোগো" class="real-logo-img vintage-logo-img" draggable="false" />
-              <div>
-                <h1 class="brand-title vintage-title notranslate" translate="no">বঙ্গধ্বনি</h1>
-                <div class="brand-tagline-wrap">
-                  <span class="vintage-ornament-line">✦ ──────</span>
-                  <span class="shimmer-tagline typewriter-tagline">সনাতন বঙ্গের সনাতন ধ্বনি</span>
-                  <span class="vintage-ornament-line">────── ✦</span>
-                </div>
-              </div>
-            </div>
+        
+        <!-- Center Title -->
+        <div class="banner-center-title">
+          <a href="index.html" style="text-decoration: none;">
+            <h1 class="banner-h1 notranslate" translate="no">বঙ্গধ্বনি</h1>
           </a>
+          <div class="banner-subtitle-wrap">
+            <span style="flex: 1;"></span>
+            <span class="banner-subtitle">সনাতন বঙ্গের সনাতন ধ্বনি</span>
+            <span class="banner-price">মূল্য—১০.০০</span>
+          </div>
         </div>
 
-        <!-- Right Earpiece Box -->
-        <div class="earpiece-box earpiece-right">
-          <div class="earpiece-title" id="earpiece-location-name">কলকাতা সংস্করণ</div>
-          <div class="earpiece-detail" id="earpiece-weather-info">আবহাওয়া: ৩১°সে ⛅</div>
-          <button onclick="requestUserLocation()" title="লাইভ স্থান রিফ্রেশ করুন" style="margin-top:2px; font-size:0.68rem; background:rgba(0,0,0,0.06); border:1px solid var(--border-strong); padding:2px 6px; border-radius:2px; cursor:pointer; font-weight:bold; color:var(--crimson);">📍 স্থান আপডেট করুন</button>
-          <button class="epaper-btn-header vintage-btn" onclick="openEPaperModal(1)" style="margin-top:4px;">
-            📰 ই-পেপার (১৬ পৃষ্ঠা)
-          </button>
+        <!-- Right Logo Box -->
+        <div class="banner-logo-right">
+          <img src="logo1.png" alt="লোগো" class="right-logo-img" style="border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
         </div>
+        
       </div>
-
-      <!-- Vintage Sub-Bar Rules -->
-      <div class="header-meta-bar vintage-sub-bar">
-        <span class="meta-pill-vintage">স্বতন্ত্র ও নিরপেক্ষ ডিজিটাল সংবাদপত্র</span>
-        <span class="meta-pill-vintage">বঙ্গপ্রতিনিধি ইকোনোমিক অ্যান্ড কালচারাল ফাউন্ডেশন</span>
-        <span class="meta-pill-vintage">জাতীয় লেখক সংঘ মুখপত্র</span>
-      </div>
-
+    </div>
+    
+    <!-- Bottom Orange Bar -->
+    <div class="banner-bottom-bar">
+      <span>রাষ্ট্রীয় লেখক সংঘের অফিসিয়াল মুখপত্র</span>
     </div>
   </header>
 
@@ -133,8 +118,11 @@
   <main class="container main-content-layout">
 
     <!-- BREADCRUMB INDICATOR (ANANDABAZAR PATRIKA RUTE) -->
-    <div id="section-breadcrumb-bar" class="breadcrumb-bar" style="display:none; margin-bottom:14px; font-size:0.88rem; color:var(--crimson); font-weight:bold; background:var(--bg-quote); border:1px solid var(--border-strong); padding:8px 14px; border-radius:4px;">
-      <span>বঙ্গধ্বনি</span> ➔ <span id="breadcrumb-active-name" style="color:var(--text-1);">রাজ্য-রাজধানী</span>
+    <div id="section-breadcrumb-bar" style="display:none; text-align:center; padding: 20px 0; margin-bottom: 20px; border-bottom: 1px solid var(--border-light);">
+      <div style="font-size:0.85rem; color:var(--crimson); font-family:sans-serif; margin-bottom: 15px;">
+        <span style="color:#666;">Bongodhoni / </span><span id="breadcrumb-active-name" style="color:var(--text-1);">রাজ্য-রাজধানী</span>
+      </div>
+      <h1 id="dynamic-section-title" style="font-family:var(--font-serif); font-size: 2.8rem; font-weight: 900; color:var(--crimson); margin:0;">রাজ্য-রাজধানী</h1>
     </div>
 
     <!-- 1. HERO LEAD STORY SECTION (প্রচ্ছদ) -->

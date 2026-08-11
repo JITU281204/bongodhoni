@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupEventListeners();
   setupThemeToggle();
   initScrollReveal();
+  
+  // Initialize SPA default view
+  handleCategoryNav("all");
 });
 
 function renderAllCategorySections() {
@@ -464,27 +467,62 @@ function initClockAndSettings() {
   setInterval(updateLiveUserCount, 2000);
 }
 
-// Anandabazar Patrika Style Dynamic Category Routing & Spotlight Switcher
+// Anandabazar Patrika Style Dynamic Category Routing (SPA Ecosystem)
 function handleCategoryNav(categoryKey, btnEl) {
+  // Update active nav link state
   const links = document.querySelectorAll(".nav-link");
   links.forEach(l => l.classList.remove("active"));
-  if (btnEl) {
-    btnEl.classList.add("active");
-    try {
-      btnEl.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-    } catch (e) {}
+  if (btnEl) btnEl.classList.add("active");
+
+  // Hide all sections
+  const sections = document.querySelectorAll(".category-section-block, .ticker-wrapper, #horizontal-news-list-container, #trending-widget-container, #section-recommended");
+  sections.forEach(s => {
+    s.style.display = "none";
+  });
+
+  const breadcrumbBar = document.getElementById("section-breadcrumb-bar");
+  
+  if (categoryKey === "all" || categoryKey === "prochhod") {
+    // Show homepage elements
+    const ticker = document.querySelector(".ticker-wrapper");
+    if (ticker) ticker.style.display = "";
+    
+    const prochhod = document.getElementById("section-prochhod");
+    if (prochhod) prochhod.style.display = "block";
+    
+    const horizList = document.getElementById("horizontal-news-list-container");
+    if (horizList) horizList.style.display = "block";
+    
+    const recSection = document.getElementById("section-recommended");
+    if (recSection) recSection.style.display = "block";
+
+    const trendSec = document.getElementById("trending-widget-container");
+    if (trendSec) trendSec.style.display = "block";
+
+    if (breadcrumbBar) breadcrumbBar.style.display = "none";
+  } else {
+    // Show specific section
+    const targetId = "section-" + categoryKey;
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.style.display = "block";
+    }
+
+    // Update Breadcrumb & Show it
+    if (breadcrumbBar) {
+      breadcrumbBar.style.display = "block";
+      const nameSpan = document.getElementById("breadcrumb-active-name");
+      const titleH1 = document.getElementById("dynamic-section-title");
+      
+      const categoryNameRaw = categoryNameMap[categoryKey] || categoryKey;
+      
+      if (nameSpan) nameSpan.innerText = categoryNameRaw;
+      if (titleH1) titleH1.innerText = categoryNameRaw;
+    }
   }
 
-  // Scroll smoothly to the corresponding section down the page
-  let targetId = "hero-news-container"; // Default top section for 'all' / home
-  if (categoryKey !== "all" && categoryKey !== "prochhod") {
-    targetId = "section-" + categoryKey;
-  }
-
-  const targetSection = document.getElementById(targetId);
-  if (targetSection) {
-    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Render Dynamic Hero Lead Story & Side Stack (Anandabazar Category Spotlight Engine)
@@ -557,37 +595,6 @@ function renderHeroArticle(categoryKey = "all") {
   `;
 }
 
-// Category Navigation Click Handler (Populates the homepage news section dynamically)
-function handleCategoryNav(categoryKey, btnEl) {
-  const links = document.querySelectorAll(".nav-link");
-  links.forEach(l => l.classList.remove("active"));
-  if (btnEl) btnEl.classList.add("active");
-
-  // Update Section Title Text
-  const titleEl = document.getElementById("sub-news-section-title");
-  if (titleEl) {
-    titleEl.innerText = categoryTitleMap[categoryKey] || "বিশেষ সংবাদ";
-  }
-
-  // Update Quick Link to open the e-paper page
-  const quickLinkEl = document.getElementById("category-epaper-quicklink");
-  const targetPage = window.BongoCMS ? BongoCMS.getCategoryEPaperPage(categoryKey) : 1;
-  if (quickLinkEl) {
-    quickLinkEl.innerHTML = `
-      <button class="epaper-btn-header vintage-btn" onclick="openEPaperModal(${targetPage})" style="font-size:0.82rem; padding:4px 12px;">
-        📖 এই বিভাগের অরিজিনাল ই-পেপার পৃষ্ঠা ${targetPage} খুলুন ➔
-      </button>
-    `;
-  }
-
-  // Render Category News Cards into the Section Grid
-  renderSubNewsGrid(categoryKey);
-
-  // Smooth Scroll to Section Title
-  if (titleEl) {
-    titleEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-}
 
 // District News Filter Handler (Anandabazar District Pills)
 function filterDistrict(districtKey, btnEl) {
