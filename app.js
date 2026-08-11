@@ -17,11 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setupThemeToggle();
   initScrollReveal();
   
-  // Initialize SPA default view based on URL parameter
-  const urlParams = new URLSearchParams(window.location.search);
-  const sectionParam = urlParams.get('section');
-  if (sectionParam) {
-    handleCategoryNav(sectionParam, null);
+  // Initialize SPA default view based on URL path
+  const pathSegment = window.location.pathname.replace(/^\/|\/$/g, ''); // Remove leading/trailing slashes
+  const validSections = ["rajya", "desh", "bharat", "neighbour", "history", "opinion", "all", "prochhod"];
+  
+  if (pathSegment && validSections.includes(pathSegment)) {
+    handleCategoryNav(pathSegment, null);
   } else {
     handleCategoryNav("all");
   }
@@ -486,11 +487,15 @@ function handleCategoryNav(categoryKey, btnEl) {
     if (activeLink) activeLink.classList.add("active");
   }
 
-  // Update URL to give the illusion of different pages (Sub-domain effect)
+  // Update URL to give the illusion of different pages (Clean URL routing)
   const newUrl = (categoryKey === 'all' || categoryKey === 'prochhod') 
-    ? window.location.pathname 
-    : "?section=" + categoryKey;
-  window.history.pushState({ path: newUrl }, '', newUrl);
+    ? "/" 
+    : "/" + categoryKey;
+  
+  // Only push if it's different to prevent duplicate history states
+  if (window.location.pathname !== newUrl) {
+    window.history.pushState({ path: newUrl }, '', newUrl);
+  }
 
   // Hide all sections
   const sections = document.querySelectorAll(".category-section-block, .ticker-wrapper, #horizontal-news-list-container, #trending-widget-container, #section-recommended");
