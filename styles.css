@@ -2250,29 +2250,66 @@ td { padding: 12px; }
   .new-banner-grid {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+  }
+  .banner-center-title {
+    order: 1; /* Title at the top */
+    width: 100%;
+    margin-bottom: 5px;
   }
   .banner-logo-left, .banner-logo-right {
     flex: unset;
-    width: 100%;
+    width: 45%; /* Place logos side by side */
+    justify-content: center;
+    order: 2;
+  }
+  .banner-logo-left img, .right-logo-img {
+    height: 100px; /* Smaller logos */
+    width: 100px;
+  }
+  .banner-h1 {
+    font-size: 3.5rem;
+  }
+  
+  /* Fix Top Utility Bar & Nav overflows */
+  .top-bar-content {
+    height: auto !important;
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .date-weather-info {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .nav-container {
+    height: auto !important;
+    flex-wrap: wrap;
+    padding: 10px 0;
     justify-content: center;
   }
-  .banner-center-title {
-    order: -1;
-    margin-bottom: 15px;
-  }
-  .banner-h1 {
-    font-size: 4rem;
-  }
 }
+
 @media (max-width: 600px) {
   .banner-h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
+  }
+  .banner-subtitle-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
   .banner-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    text-align: center;
   }
   .banner-price {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  .banner-logo-left img, .right-logo-img {
+    height: 80px;
+    width: 80px;
   }
 }
