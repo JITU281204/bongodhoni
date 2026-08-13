@@ -2106,24 +2106,91 @@ td { padding: 12px; }
   /* Section Header */
   .section-header-nextlevel { flex-direction: column; text-align: center; gap: 12px; width: 100%; }
   
+  /* Modals Base */
+  .modal-backdrop { padding: 10px !important; box-sizing: border-box !important; }
+  
   /* Article Modals */
-  .article-modal { padding: 15px; width: 100%; margin: 10px auto; max-width: 100vw; box-sizing: border-box; }
-  .article-modal-image img { height: auto !important; max-height: 250px; width: 100%; object-fit: cover; }
-  .article-modal-title { font-size: 1.6rem !important; }
+  .article-modal, .legal-modal-container { 
+    width: 100% !important; 
+    max-width: 100% !important; 
+    margin: 0 auto !important; 
+    max-height: 90vh !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+  }
+  .article-modal-image img { height: auto !important; max-height: 220px !important; width: 100% !important; object-fit: cover !important; border-radius: 8px !important; }
+  .article-modal-title { font-size: 1.5rem !important; line-height: 1.3 !important; }
   
-  /* E-Paper Modal */
-  .epaper-modal-container { width: 100% !important; max-width: 100vw !important; margin: 0 !important; }
-  .epaper-modal { padding: 12px; width: 100%; margin: 5px auto; box-sizing: border-box; }
-  .epaper-modal-header { flex-direction: column; text-align: center; gap: 16px; width: 100%; }
-  .epaper-controls { flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
-  .print-header { flex-direction: column; align-items: center; text-align: center; gap: 16px; width: 100%; }
-  .paper-sheet { width: 100% !important; min-height: auto; padding: 15px; box-sizing: border-box; }
-  .epaper-modal-body { display: flex !important; flex-direction: column !important; width: 100% !important; }
+  /* E-Paper Modal Deep Fixes */
+  .epaper-modal-container { 
+    width: 100% !important; 
+    max-width: 100% !important; 
+    height: 95vh !important;
+    margin: 0 !important; 
+    border-radius: 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .epaper-modal-header { 
+    flex-direction: column !important; 
+    text-align: center !important; 
+    gap: 12px !important; 
+    padding: 12px !important; 
+    width: 100% !important; 
+  }
+  .epaper-controls { flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; width: 100% !important; }
   
-  /* Admin Panel */
-  .admin-wrapper { padding: 12px; gap: 20px; width: 100%; box-sizing: border-box; }
-  .upload-zone { padding: 20px 15px !important; width: 100%; box-sizing: border-box; }
+  .epaper-modal-body { 
+    display: flex !important; 
+    flex-direction: column-reverse !important; /* Sidebar at bottom on mobile */
+    width: 100% !important; 
+    flex-grow: 1 !important;
+    overflow: hidden !important; 
+  }
+  
+  .epaper-thumbs-sidebar {
+    width: 100% !important;
+    height: 120px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    border-right: none !important;
+    border-top: 1px solid rgba(255, 215, 0, 0.2) !important;
+    padding: 10px !important;
+  }
+  
+  .epaper-thumbs-sidebar img {
+    height: 100% !important;
+    width: auto !important;
+    max-width: unset !important;
+    margin-right: 10px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .epaper-stage-view {
+    width: 100% !important;
+    flex-grow: 1 !important;
+    overflow: auto !important;
+    padding: 10px !important;
+  }
+  
+  .paper-sheet { 
+    width: 100% !important; 
+    min-width: 300px !important;
+    min-height: auto !important; 
+    padding: 15px !important; 
+    box-sizing: border-box !important; 
+  }
+  .print-header { flex-direction: column !important; align-items: center !important; text-align: center !important; gap: 16px !important; width: 100% !important; }
+  
+  /* Admin Panel & Login */
+  .admin-wrapper { padding: 12px !important; gap: 20px !important; width: 100% !important; box-sizing: border-box !important; }
+  .upload-zone { padding: 20px 15px !important; width: 100% !important; box-sizing: border-box !important; }
   .admin-wrapper > div form > div { display: flex !important; flex-direction: column !important; width: 100% !important; }
+  #adminAuthOverlay > div { padding: 24px !important; width: 92% !important; box-sizing: border-box !important; }
 }
 
 @media (max-width: 480px) {
