@@ -494,7 +494,11 @@ function handleCategoryNav(categoryKey, btnEl) {
   
   // Only push if it's different to prevent duplicate history states
   if (window.location.pathname !== newUrl) {
-    window.history.pushState({ path: newUrl }, '', newUrl);
+    try {
+      window.history.pushState({ path: newUrl }, '', newUrl);
+    } catch (e) {
+      console.log("pushState error (file:// protocol doesn't support changing paths):", e);
+    }
   }
 
   // Hide all sections

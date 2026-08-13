@@ -82,14 +82,14 @@
   <nav class="main-nav">
     <div class="container nav-container">
       <div class="nav-links">
-        <a href="#" class="nav-link active" onclick="handleCategoryNav('all', this); return false;">প্রচ্ছদ (পৃষ্ঠা ১)</a>
-        <a href="#" class="nav-link" onclick="handleCategoryNav('rajya', this); return false;">রাজ্য-রাজধানী (পৃষ্ঠা ২-৩)</a>
-        <a href="#" class="nav-link" onclick="handleCategoryNav('desh', this); return false;">দেশ ও রাজনীতি (পৃষ্ঠা ৪-৮)</a>
-        <a href="#" class="nav-link" onclick="handleCategoryNav('bharat', this); return false;">ভারত ডায়েরি (পৃষ্ঠা ৯)</a>
-        <a href="#" class="nav-link" onclick="handleCategoryNav('neighbour', this); return false;">প্রতিবেশীর উত্থান (পৃষ্ঠা ১০)</a>
-        <a href="#" class="nav-link" onclick="handleCategoryNav('history', this); return false;">ইতিহাস ও কৃষ্টি (পৃষ্ঠা ১১)</a>
-        <a href="#" class="nav-link" onclick="handleCategoryNav('opinion', this); return false;">আপনার দৃষ্টি (পৃষ্ঠা ১২)</a>
-        <a href="#" class="nav-link" onclick="openEPaperModal(1); return false;" style="color: #FFD700; font-weight:900;">📰 ই-পেপার (১৬ পৃষ্ঠা)</a>
+        <a href="/" class="nav-link active" onclick="handleCategoryNav('all', this); return false;">প্রচ্ছদ (পৃষ্ঠা ১)</a>
+        <a href="/rajya" class="nav-link" onclick="handleCategoryNav('rajya', this); return false;">রাজ্য-রাজধানী (পৃষ্ঠা ২-৩)</a>
+        <a href="/desh" class="nav-link" onclick="handleCategoryNav('desh', this); return false;">দেশ ও রাজনীতি (পৃষ্ঠা ৪-৮)</a>
+        <a href="/bharat" class="nav-link" onclick="handleCategoryNav('bharat', this); return false;">ভারত ডায়েরি (পৃষ্ঠা ৯)</a>
+        <a href="/neighbour" class="nav-link" onclick="handleCategoryNav('neighbour', this); return false;">প্রতিবেশীর উত্থান (পৃষ্ঠা ১০)</a>
+        <a href="/history" class="nav-link" onclick="handleCategoryNav('history', this); return false;">ইতিহাস ও কৃষ্টি (পৃষ্ঠা ১১)</a>
+        <a href="/opinion" class="nav-link" onclick="handleCategoryNav('opinion', this); return false;">আপনার দৃষ্টি (পৃষ্ঠা ১২)</a>
+        <a href="#" class="nav-link" onclick="openEPaperModal(1); return false;" style="color: #FFD700; font-weight:900;">📰 ই-পেপার (১৮ পৃষ্ঠা)</a>
       </div>
 
       <div class="nav-right-tools">
@@ -637,19 +637,19 @@
         <div class="epaper-card-gold-corner top-right"></div>
         
         <div class="epaper-card-header">
-          <span class="badge-vintage-gold">✦ ১৬ পৃষ্ঠার ডিজিটাল প্রিন্ট সংস্করণ ✦</span>
+          <span class="badge-vintage-gold">✦ ১৮ পৃষ্ঠার ডিজিটাল প্রিন্ট সংস্করণ ✦</span>
           <h3 class="epaper-card-title">বঙ্গধ্বনি ই-পেপার রিডার</h3>
-          <p class="epaper-card-subtitle">মুদ্রিত খবরের কাগজের অবিকল ১৬টি পৃষ্ঠা উচ্চমানের এইচডি স্ক্যানে হাই-স্পিড ই-পেপারে পড়ুন।</p>
+          <p class="epaper-card-subtitle">মুদ্রিত খবরের কাগজের অবিকল ১৮টি পৃষ্ঠা উচ্চমানের এইচডি স্ক্যানে হাই-স্পিড ই-পেপারে পড়ুন।</p>
         </div>
 
         <!-- 3D Layered Newspaper Stack Preview -->
-        <div class="epaper-3d-stack-wrapper" onclick="openEPaperModal(1)" title="১৬ পৃষ্ঠার ই-পেপার খুলুন">
+        <div class="epaper-3d-stack-wrapper" onclick="openEPaperModal(1)" title="১৮ পৃষ্ঠার ই-পেপার খুলুন">
           <div class="epaper-stack-layer layer-3"></div>
           <div class="epaper-stack-layer layer-2"></div>
           <div class="epaper-stack-layer layer-1">
-            <img src="Bongodhwani 02-08-26-digital version_page-0001.jpg" alt="বঙ্গধ্বনি ই-পেপার প্রথম পৃষ্ঠা" class="epaper-real-page-scan" />
+            <img src="epaper_pages/Bongodhwani 09-08-26-digital version_page-0001.jpg" alt="বঙ্গধ্বনি ই-পেপার প্রথম পৃষ্ঠা" class="epaper-real-page-scan" />
             <div class="epaper-page-curl-corner"></div>
-            <div class="epaper-live-badge">🔴 পৃষ্ঠা ১ / ১৬</div>
+            <div class="epaper-live-badge">🔴 পৃষ্ঠা ১ / ১৮</div>
           </div>
         </div>
 
@@ -664,7 +664,7 @@
         </div>
 
         <button class="btn-epaper-launch-nextlevel" onclick="openEPaperModal(1)">
-          <span>📖 সম্পূর্ণ ১৬ পৃষ্ঠার ই-পেপার খুলুন ➔</span>
+          <span>📖 সম্পূর্ণ ১৮ পৃষ্ঠার ই-পেপার খুলুন ➔</span>
         </button>
       </div>
 
@@ -726,7 +726,7 @@
       <div class="footer-grid">
         <div>
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-            <img src="logo.png" style="width: 36px; height: 36px; object-fit: contain; border-radius: 6px; flex-shrink: 0;" alt="বঙ্গধ্বনি লোগো" />
+            <img src="logo1.png" style="width: 36px; height: 36px; object-fit: contain; border-radius: 6px; flex-shrink: 0;" alt="বঙ্গধ্বনি লোগো" />
             <img src="sangh_logo.png" style="width: 36px; height: 36px; object-fit: contain; border-radius: 6px; flex-shrink: 0;" title="রাষ্ট্রীয় লেখক সঙ্ঘ" alt="রাষ্ট্রীয় লেখক সঙ্ঘ" draggable="false" />
             <div class="footer-brand" style="margin-bottom: 0;">বঙ্গধ্বনি</div>
           </div>
@@ -748,7 +748,7 @@
         <div>
           <h4 class="footer-links-title">ডিজিটাল সেবা</h4>
           <ul class="footer-links-list">
-            <li><a href="#" onclick="openEPaperModal(1); return false;">ই-পেপার (১৬ পৃষ্ঠা)</a></li>
+            <li><a href="#" onclick="openEPaperModal(1); return false;">ই-পেপার (১৮ পৃষ্ঠা)</a></li>
             <li><a href="admin.html" target="_blank">এডমিন পোর্টাল</a></li>
             <li><a href="#" onclick="openSearchModal(); return false;">সংবাদ সন্ধান</a></li>
             <li><a href="#" onclick="openWhatsAppTip(); return false;">খবর পাঠান</a></li>
@@ -801,7 +801,7 @@
         <div class="legal-section-block">
           <h3>১. স্বত্বাধিকার ও কপিরাইট আইনগত সুরক্ষা (Copyright Protection)</h3>
           <p>
-            'বঙ্গধ্বনি' (Bongodhoni) ডিজিটাল সংবাদপত্র, দৈনিক ও সাপ্তাহিক মুদ্রিত সংস্করণ, ১৬ পৃষ্ঠার ই-পেপার এইচডি স্ক্যান কপি, লোগো, গ্রাফিক্স, সংবাদ শৈলী এবং ওয়েবসাইটের যাবতীয় বিষয়বস্তু <strong>ভারতীয় কপিরাইট আইন, ১৯৫৭ (Copyright Act, 1957)</strong> এবং আন্তর্জাতিক কপিরাইট কনভেনশন দ্বারা সম্পূর্ণ সুরক্ষিত।
+            'বঙ্গধ্বনি' (Bongodhoni) ডিজিটাল সংবাদপত্র, দৈনিক ও সাপ্তাহিক মুদ্রিত সংস্করণ, ১৮ পৃষ্ঠার ই-পেপার এইচডি স্ক্যান কপি, লোগো, গ্রাফিক্স, সংবাদ শৈলী এবং ওয়েবসাইটের যাবতীয় বিষয়বস্তু <strong>ভারতীয় কপিরাইট আইন, ১৯৫৭ (Copyright Act, 1957)</strong> এবং আন্তর্জাতিক কপিরাইট কনভেনশন দ্বারা সম্পূর্ণ সুরক্ষিত।
           </p>
         </div>
 
@@ -812,26 +812,19 @@
           </p>
         </div>
 
-        <div class="legal-section-block">
-          <h3>৩. ট্রেডমার্ক ও বুদ্ধিবৃত্তিক সম্পদ (Trademark & IP Rights)</h3>
-          <p>
-            'বঙ্গধ্বনি' (Bongodhoni) নামটি বঙ্গপ্রতিনিধি ইকোনোমিক অ্যান্ড কালচারাল ফাউন্ডেশন এবং রাষ্ট্রীয় লেখক সঙ্ঘের নিবন্ধিত ট্রেডমার্ক। কোনো ব্যক্তি বা প্রতিষ্ঠান এই নাম, প্রতীক বা লোগো ব্যবহার করে বিভ্রান্তি সৃষ্টি করলে তা বুদ্ধিবৃত্তিক সম্পদ লঙ্ঘন (Intellectual Property Infringement) হিসেবে বিবেচিত হবে।
-          </p>
-        </div>
 
         <div class="legal-section-block warning-block">
-          <h3>৪. আইনগত পদক্ষেপ ও ক্ষতিপূরণ (Legal Action & Civil/Criminal Liability)</h3>
+          <h3>৩. আইনগত পদক্ষেপ ও ক্ষতিপূরণ (Legal Action & Civil/Criminal Liability)</h3>
           <p>
             কপিরাইট লঙ্ঘন, ডিজিটাল পাইরেসি বা অনুমতি ছাড়া ই-পেপার ও ফাইল বাণিজ্যিকভাবে বিতরণ করা হলে <strong>তথ্যপ্রযুক্তি আইন ২০০০ (IT Act 2000 - Section 66)</strong> এবং দেওয়ানি ও ফৌজদারি আদালতে অনতিবিলম্বে ক্ষতিপূরণ দাবি সহ আইনি মামলা দায়ের করা হবে।
           </p>
         </div>
 
         <div class="legal-section-block">
-          <h3>৫. প্রকাশনা রেজিস্ট্রি ও আইনগত পরামর্শদাতা (Registration & Counsel)</h3>
+          <h3>৪. প্রকাশনা রেজিস্ট্রি ও আইনগত পরামর্শদাতা (Registration & Counsel)</h3>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: var(--text-2);">
             <li>🏛️ <strong>প্রকাশক:</strong> অরিন্দম নাথ</li>
             <li>📚 <strong>সহ-উদ্যোগ:</strong> রাষ্ট্রীয় লেখক সঙ্ঘ (কেন্দ্রীয় কমিটি)</li>
-            <li>⚖️ <strong>আইনগত পরামর্শদাতা:</strong> লিগ্যাল কেয়ার অ্যাসোসিয়েটস, হাইকোর্ট ক্যালকাটা</li>
           </ul>
         </div>
       </div>
