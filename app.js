@@ -57,7 +57,7 @@ function renderRecommendedNewsGrid() {
     <!-- Left Column: Primary Recommended News Lead Card -->
     <div class="anandabazar-lead-card" onclick="openArticleModal('${leadItem.id || 'art-108'}')" style="background:var(--bg-card); cursor:pointer;">
       <div class="anandabazar-lead-thumb" style="height:250px;">
-        <img src="${leadItem.image || 'Bongodhwani 02-08-26-digital version_page-0005.jpg'}" alt="${leadItem.title || 'বিশেষ খবর'}" loading="lazy" />
+        <img src="${leadItem.image || '12_page-0005.jpg'}" alt="${leadItem.title || 'বিশেষ খবর'}" loading="lazy" />
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
         <span class="badge badge-crimson" style="font-size:0.75rem;">🔥 বিশেষ সুপার সুপারিশ</span>
@@ -76,7 +76,7 @@ function renderRecommendedNewsGrid() {
       ${sideItems.map(item => `
         <div class="anandabazar-side-item" onclick="openArticleModal('${item.id || 'art-101'}')" style="cursor:pointer;">
           <div class="anandabazar-side-thumb">
-            <img src="${item.image || 'Bongodhwani 02-08-26-digital version_page-0001.jpg'}" alt="${item.title || 'সংবাদ'}" loading="lazy" />
+            <img src="${item.image || '12_page-0001.jpg'}" alt="${item.title || 'সংবাদ'}" loading="lazy" />
           </div>
           <div style="flex-grow: 1;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
@@ -123,7 +123,7 @@ function renderSectionGrid(categoryKey, containerId, districtFilter = "all") {
     id: "art-102",
     title: "বিশেষ আঞ্চলিক সংবাদ",
     excerpt: "বিস্তারিত জানতে প্রতিবেদনটির ওপর স্পর্শ করুন।",
-    image: "Bongodhwani 02-08-26-digital version_page-0002.jpg",
+    image: "12_page-0002.jpg",
     categoryBengali: "সংবাদ",
     epaperPage: 2,
     date: "আজ"
@@ -135,9 +135,9 @@ function renderSectionGrid(categoryKey, containerId, districtFilter = "all") {
   // If no articles are found for the right side column, populate with related documented news fallbacks
   if (!sideList || sideList.length === 0) {
     sideList = [
-      { id: "art-related-1", title: "এই সম্পর্কিত আরও বিস্তারিত ও গুরুত্বপূর্ণ খবরের আপডেট", categoryBengali: "সম্পর্কিত খবর", image: "Bongodhwani 02-08-26-digital version_page-0003.jpg", epaperPage: 3, date: "আজ" },
-      { id: "art-related-2", title: "আঞ্চলিক পরিস্থিতির ওপর বিশেষ প্রতিবেদন ও বিশ্লেষণ", categoryBengali: "বিশেষ প্রতিবেদন", image: "Bongodhwani 02-08-26-digital version_page-0016.jpg", epaperPage: 4, date: "আজ" },
-      { id: "art-related-3", title: "অন্যান্য জেলার নির্বাচিত গুরুত্বপূর্ণ সংবাদ সংক্ষেপ", categoryBengali: "অন্যান্য সংবাদ", image: "Bongodhwani 02-08-26-digital version_page-0001.jpg", epaperPage: 5, date: "আজ" }
+      { id: "art-related-1", title: "এই সম্পর্কিত আরও বিস্তারিত ও গুরুত্বপূর্ণ খবরের আপডেট", categoryBengali: "সম্পর্কিত খবর", image: "12_page-0003.jpg", epaperPage: 3, date: "আজ" },
+      { id: "art-related-2", title: "আঞ্চলিক পরিস্থিতির ওপর বিশেষ প্রতিবেদন ও বিশ্লেষণ", categoryBengali: "বিশেষ প্রতিবেদন", image: "12_page-0016.jpg", epaperPage: 4, date: "আজ" },
+      { id: "art-related-3", title: "অন্যান্য জেলার নির্বাচিত গুরুত্বপূর্ণ সংবাদ সংক্ষেপ", categoryBengali: "অন্যান্য সংবাদ", image: "12_page-0001.jpg", epaperPage: 5, date: "আজ" }
     ];
   }
 
@@ -147,7 +147,7 @@ function renderSectionGrid(categoryKey, containerId, districtFilter = "all") {
     <!-- Left Column: Lead Feature (Anandabazar Big Card with Key Highlights) -->
     <div class="anandabazar-lead-card" onclick="openArticleModal('${leadArticle.id || 'art-102'}')">
       <div class="anandabazar-lead-thumb">
-        <img src="${leadArticle.image || 'Bongodhwani 02-08-26-digital version_page-0002.jpg'}" alt="${leadArticle.title || 'সংবাদ'}" loading="lazy" />
+        <img src="${leadArticle.image || '12_page-0002.jpg'}" alt="${leadArticle.title || 'সংবাদ'}" loading="lazy" />
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <span class="badge badge-crimson">🔴 ${leadArticle.categoryBengali || 'বিশেষ সংবাদ'}</span>
@@ -166,7 +166,7 @@ function renderSectionGrid(categoryKey, containerId, districtFilter = "all") {
       ${sideList.map(item => `
         <div class="anandabazar-side-item" onclick="openArticleModal('${item.id || 'art-102'}')">
           <div class="anandabazar-side-thumb">
-            <img src="${item.image || 'Bongodhwani 02-08-26-digital version_page-0002.jpg'}" alt="${item.title || 'সংবাদ'}" loading="lazy" />
+            <img src="${item.image || '12_page-0002.jpg'}" alt="${item.title || 'সংবাদ'}" loading="lazy" />
           </div>
           <div>
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
@@ -583,7 +583,7 @@ function renderHeroArticle(categoryKey = "all") {
     <!-- Left Column: Primary Category Lead Card (Anandabazar Big Card) -->
     <div class="anandabazar-lead-card" onclick="openArticleModal('${hero.id || 'art-101'}')" style="background:var(--bg-card); cursor:pointer;">
       <div class="anandabazar-lead-thumb" style="height:310px;">
-        <img src="${hero.image || 'Bongodhwani 02-08-26-digital version_page-0001.jpg'}" alt="${hero.title || 'প্রধান সংবাদ'}" loading="lazy" />
+        <img src="${hero.image || '12_page-0001.jpg'}" alt="${hero.title || 'প্রধান সংবাদ'}" loading="lazy" />
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
         <span class="badge badge-crimson" style="font-size:0.8rem;">🔴 ${hero.categoryBengali || 'প্রধান সংবাদ'}</span>
@@ -606,7 +606,7 @@ function renderHeroArticle(categoryKey = "all") {
       ${secondary.map(item => `
         <div class="anandabazar-side-item" onclick="openArticleModal('${item.id || 'art-101'}')">
           <div class="anandabazar-side-thumb">
-            <img src="${item.image || 'Bongodhwani 02-08-26-digital version_page-0001.jpg'}" alt="${item.title || 'সংবাদ'}" loading="lazy" />
+            <img src="${item.image || '12_page-0001.jpg'}" alt="${item.title || 'সংবাদ'}" loading="lazy" />
           </div>
           <div>
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
@@ -682,7 +682,7 @@ function renderTrendingWidget() {
     <div class="trending-item-nextlevel" onclick="openArticleModal('${article.id || 'art-101'}')">
       <div class="trending-rank-badge rank-${idx + 1}">${bengaliNums[idx] || (idx + 1)}</div>
       <div class="trending-thumb">
-        <img src="${article.image || 'Bongodhwani 02-08-26-digital version_page-0001.jpg'}" alt="${article.title || 'সংবাদ'}" loading="lazy" />
+        <img src="${article.image || '12_page-0001.jpg'}" alt="${article.title || 'সংবাদ'}" loading="lazy" />
       </div>
       <div class="trending-info">
         <h4 class="trending-item-title">${article.title || ''}</h4>
