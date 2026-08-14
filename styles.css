@@ -2340,36 +2340,37 @@ td { padding: 12px; }
 @media (max-width: 900px) {
   .new-banner-grid {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    gap: 8px;
   }
   .banner-center-title {
-    order: 1; /* Title at the top */
-    width: 100%;
-    margin-bottom: 10px;
+    order: 2;
+    width: auto;
+    margin-bottom: 0;
   }
   .banner-logo-left {
-    order: 2;
-    flex: 1;
+    order: 1;
+    flex: 0 0 auto;
     display: flex;
     justify-content: flex-end;
-    padding-right: 15px;
+    padding-right: 0;
   }
   .banner-logo-right {
     order: 3;
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     justify-content: flex-start;
-    padding-left: 15px;
+    padding-left: 0;
   }
   .banner-logo-left img, .right-logo-img {
-    height: 90px;
-    width: 90px;
+    height: 60px;
+    width: 60px;
     object-fit: contain;
   }
   .banner-h1 {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
   }
   
   /* Fix Top Utility Bar & Nav overflows */
