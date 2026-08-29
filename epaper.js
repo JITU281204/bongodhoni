@@ -4,24 +4,150 @@
  */
 
 const ePaperPages = [
-  { pageNum: 1, title: "১ম পৃষ্ঠা (প্রচ্ছদ)", badge: "১ম পৃষ্ঠা", headline: "বিজ্ঞানীর মর্যাদা বনাম গান্ধী বংশ: একজন সাংসদের ভাষা কি এতটাই অধঃপতিত? নাকি অহঙ্কার?", subHeadline: "ভারতের প্রথম মাইক্রোপ্রসেসর নির্মাতা পদ্মশ্রী ভি. কামাকোটি তাঁকে বলা হলো ‘গোমূত্র বিশেষজ্ঞ’!", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0001.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0001.jpg" },
-  { pageNum: 2, title: "২য় পৃষ্ঠা (বিশেষ খবর)", badge: "২য় পৃষ্ঠা", headline: "দিল্লির যন্তর মন্তরের NEET আন্দোলনে নাশকতার ছক? গ্রেফতার সন্দেহভাজন জেইএম জঙ্গিকে নিয়ে চাঞ্চল্যকর দাবি পশ্চিমবঙ্গ STF-এর", subHeadline: "ক্ষমতার পালাবদল আর সাহিত্যিকদের অবস্থান বদল: পশ্চিমবঙ্গের বুদ্ধিজীবীরা ধন্যি", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0002.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0002.jpg" },
-  { pageNum: 3, title: "৩য় পৃষ্ঠা (দেশের খবর)", badge: "৩য় পৃষ্ঠা", headline: "ছাত্র আন্দোলন নাকি আরশোলার উৎপাত", subHeadline: "আরশোলাদের আন্দোলন দেশদ্রোহের আস্ফালন", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0003.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0003.jpg" },
-  { pageNum: 4, title: "৪র্থ পৃষ্ঠা (বিশেষ খবর)", badge: "৪র্থ পৃষ্ঠা", headline: "দিল্লিতে ছাত্র আন্দোলন। এটা কি প্রকৃত ছাত্র আন্দোলন?", subHeadline: "নিট ছাত্র আন্দোলন এবং ডিপস্টেট ষড়যন্ত্র", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0004.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0004.jpg" },
-  { pageNum: 5, title: "৫ম পৃষ্ঠা (রাজ্যের খবর)", badge: "৫ম পৃষ্ঠা", headline: "যন্তর-মন্তরের মহাভারত", subHeadline: "বিজ্ঞানীর মর্যাদা বনাম গান্ধী বংশ: একজন সাংসদের ভাষা কি এতটাই অধঃপতিত? নাকি অহঙ্কার?", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0005.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0005.jpg" },
-  { pageNum: 6, title: "৬ষ্ঠ পৃষ্ঠা (বিশেষ খবর)", badge: "৬ষ্ঠ পৃষ্ঠা", headline: "স্পেনে মরক্কো বাসীদের অনুপ্রবেশ-স্পেনকে 'শেনজেন অঞ্চল' থেকে সাময়িক বাদ দেওয়ার দাবি মেলোনির।", subHeadline: "হামাসের সাথে নিরস্ত্রীকরণ চুক্তি ঘোষণা করলেন ট্রাম্প", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0006.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0006.jpg" },
-  { pageNum: 7, title: "৭ম পৃষ্ঠা (রাজ্যের খবর)", badge: "৭ম পৃষ্ঠা", headline: "১০১ বছরের ইতিহাসে প্রথমবার সঙ্ঘ পরিচিতি বর্গে প্রকাশকেরা। সৌজন্যে বঙ্গীয় গ্রন্থশিল্প পরিষদ", subHeadline: "কোচবিহারে রাষ্ট্রীয় লেখক সঙ্ঘের উদ্যোগে গুরুপূজন অনুষ্ঠান", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0007.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0007.jpg" },
-  { pageNum: 8, title: "৮ম পৃষ্ঠা (বিশেষ খবর)", badge: "৮ম পৃষ্ঠা", headline: "ছাত্র আন্দোলনের আড়ালে সাংস্কৃতিক অবক্ষয়?", subHeadline: "কে কোথায় দাঁড়িয়ে: কে এই পদ্মশ্রী প্রফেসর ভি. কামাকোটি?", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0008.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0008.jpg" },
-  { pageNum: 9, title: "৯ম পৃষ্ঠা (বিদেশ)", badge: "৯ম পৃষ্ঠা", headline: "ঝাড়খণ্ডেও পেপার লিক কাণ্ডে উত্তাল ছাত্র আন্দোলন", subHeadline: "২০২০ দিল্লি দাঙ্গা: আইবি কর্মী অঙ্কিত শর্মা হত্যা মামলায় তাহির হোসেন-সহ পাঁচজনের যাবজ্জীবন", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0009.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0009.jpg" },
-  { pageNum: 10, title: "১০ম পৃষ্ঠা (সম্পাদক)", badge: "১০ম পৃষ্ঠা", headline: "মরক্কোর 'গ্রিন মার্চ' থেকে ইউরোপের সীমান্ত সংকট: জনস্রোত, ভূরাজনীতি ও নতুন যুদ্ধকৌশলের বিতর্ক", subHeadline: "প্রধানমন্ত্রীকে নিয়ে আপত্তিকর পোস্ট: মেটার ভারতীয় প্রধানের বিরুদ্ধে মামলা, তদন্তে সহযোগিতার আশ্বাস", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0010.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0010.jpg" },
-  { pageNum: 11, title: "১১শ পৃষ্ঠা (বিতর্ক-বিমর্শ)", badge: "১১শ পৃষ্ঠা", headline: "চীনের বিরুদ্ধে যৌথ সামরিক মহড়া আমেরিকা, জাপান এবং ফিলিপাইনের", subHeadline: "কৃত্রিম বুদ্ধিমত্তার দুনিয়ায় আবার ঠান্ডা যুদ্ধের ছায়া", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0011.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0011.jpg" },
-  { pageNum: 12, title: "১২শ পৃষ্ঠা (বিতর্ক-বিমর্শ)", badge: "১২শ পৃষ্ঠা", headline: "দুই বছর পর ভারতে প্রথম প্রকাশ্য কর্মসূচিতে শেখ হাসিনা, ৫ আগস্ট দিল্লিতে ভার্চুয়াল ভাষণ", subHeadline: "নেপালে সাম্প্রদায়িক উত্তেজনা: কাঁবড় যাত্রাকে ঘিরে সংঘর্ষে তিন হিন্দু যুবকের মৃত্যু, ভয়াবহ দাঙ্গা", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0012.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0012.jpg" },
-  { pageNum: 13, title: "১৩শ পৃষ্ঠা (আন্তর্জাতিক সম্পর্ক)", badge: "১৩শ পৃষ্ঠা", headline: "মক্কা চুক্তির পাল্টা সমীকরণ! আরও ঘনিষ্ঠ হতে পারে ভারত-ইজরায়েল", subHeadline: "বাংলাদেশ আর বেলুচিস্তানের পরে আবারও স্বাধীনতার ডাক পাক মুলুকে", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0013.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0013.jpg" },
-  { pageNum: 14, title: "১৪শ পৃষ্ঠা (পড়শী কথা)", badge: "১৪শ পৃষ্ঠা", headline: "আজ 'বালোচিস্তান স্বাধীনতা দিবস'! ইসলামাবাদের চোখরাঙানি উপেক্ষা করে স্বাধীনতার দাবিতে সরব বালোচরা", subHeadline: "বালোচদের কণ্ঠরোধ করা যাবেনা / বিশ্বমঞ্চে বালোচিস্তানের স্বাধীনতার দাবি", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0014.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0014.jpg" },
-  { pageNum: 15, title: "১৫শ পৃষ্ঠা (সনাতনী নারী)", badge: "১৫শ পৃষ্ঠা", headline: "নেতাজিকে অপমান মানে ইতিহাসকে অপমান", subHeadline: "কমলা দাশগুপ্ত: বাংলার এক সাহসী নারী বিপ্লবী", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0015.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0015.jpg" },
-  { pageNum: 16, title: "১৬শ পৃষ্ঠা (সনাতনী নারী)", badge: "১৬শ পৃষ্ঠা", headline: "বাবার শোক বুকে নিয়েই সোনার ইতিহাস, কমনওয়েলথে জুডোর প্রথম ভারতীয় স্বর্ণজয়ী অস্মিতা দে", subHeadline: "নারীর ন্যায়বিচার নিশ্চিত করতে ‘জাস্টিস ফর ওমেন’ সম্মেলন", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0016.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0016.jpg" },
-  { pageNum: 17, title: "১৭শ পৃষ্ঠা (আমি ভারত বলছি)", badge: "১৭শ পৃষ্ঠা", headline: "হুতাত্মা ক্ষুদিরাম বসু: গীতার আদর্শে অমর এক অষ্টাদশবর্ষীয় বিপ্লবীর আত্মবলিদান", subHeadline: "আমি ভারত বলছি", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0017.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0017.jpg" },
-  { pageNum: 18, title: "১৮শ পৃষ্ঠা (আপনার দৃষ্টি)", badge: "১৮শ পৃষ্ঠা", headline: "আপনিও হোন বঙ্গধ্বনির খবরদাতা", subHeadline: "বঙ্গীয় গ্রন্থশিল্প পরিষদ", pageImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0018.jpg", mainImg: "epaper_pages/Bongodhwani 09-08-26-digital version_page-0018.jpg" }
+  {
+    pageNum: 1,
+    title: "১ম পৃষ্ঠা (প্রচ্ছদ)",
+    badge: "১ম পৃষ্ঠা",
+    headline: "দ্য গ্রেট ক্যালকাটা কিলিংসের ৮০ বছর — ১৬ আগস্ট স্মরণে পশ্চিমবঙ্গজুড়ে ‘ডাইরেক্ট অ্যাকশন ডে’ পালন",
+    subHeadline: "ইতিহাসের রক্তাক্ত অধ্যায় ভুলে না যাওয়ার বার্তা; কলকাতা ও জেলায় জেলায় শ্রদ্ধাজ্ঞাপন ও প্রতিবাদ কর্মসূচি",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0001.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0001.jpg"
+  },
+  {
+    pageNum: 2,
+    title: "২য় পৃষ্ঠা (রাজ্যের কথা)",
+    badge: "২য় পৃষ্ঠা",
+    headline: "বিচারপতির চেম্বারে আইনজীবী! সুজিত বসুর জামিন মামলায় নজিরবিহীন ঘটনায় বিচারপতি সরে দাঁড়ালেন",
+    subHeadline: "জতুগৃহ রাজ্য: তারাপীঠে হোটেলে ভয়াবহ অগ্নিকাণ্ড, মৃতের সংখ্যা বেড়ে ৮: আতঙ্কে তীর্থনগরী",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0002.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0002.jpg"
+  },
+  {
+    pageNum: 3,
+    title: "৩য় পৃষ্ঠা (রাজ্যের কথা)",
+    badge: "৩য় পৃষ্ঠা",
+    headline: "সেয়ানে-সেয়ানে: যাদবপুরকাণ্ডের পর ABVP-র মিছিল ঘিরে ফের উত্তেজনা | সংঘর্ষে আহতের অভিযোগ, বহিরাগত প্রবেশ নিয়ে প্রশ্ন",
+    subHeadline: "নারী নিরাপত্তায় বাংলায় ‘দুর্গা সুরক্ষা স্কোয়াড’, স্বাধীনতা দিবসের কুচকাওয়াজেও নজর কাড়ল মহিলা পুলিশ বাহিনী",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0003.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0003.jpg"
+  },
+  {
+    pageNum: 4,
+    title: "৪র্থ পৃষ্ঠা (দেশের কথা)",
+    badge: "৪র্থ পৃষ্ঠা",
+    headline: "দ্য ভারত প্রজেক্ট: ১০ লক্ষ নতুন উদ্যোগ, ৫০ লক্ষ কর্মসংস্থানের লক্ষ্য: জাতীয় উদ্যোগপতি মিশনের প্রস্তাব",
+    subHeadline: "স্বয়মেব মৃগেন্দ্রতা: সমস্যার বদলে সমাধানের পথ দেখাচ্ছে অসম: চা-পাতা থেকেই কার্বি মহিলাদের নতুন জীবিকা",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0004.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0004.jpg"
+  },
+  {
+    pageNum: 5,
+    title: "৫ম পৃষ্ঠা (দেশের কথা)",
+    badge: "৫ম পৃষ্ঠা",
+    headline: "বিশ্বজোড়া ষড়যন্ত্র: মোহন ভাগবতের মার্কিন সফরের আগে আরএসএসের বিরুদ্ধে নিষেধাজ্ঞার দাবি",
+    subHeadline: "কংগ্রেসই কি মুসলিম লীগ?: বন্দেমাতরমে ‘কাঁচি’—কংগ্রেসের ১৯৩৭-এর আপসের রাজনীতি কি আজও বহমান?",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0005.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0005.jpg"
+  },
+  {
+    pageNum: 6,
+    title: "৬ষ্ঠ পৃষ্ঠা (বিদেশ বিভুঁই)",
+    badge: "৬ষ্ঠ পৃষ্ঠা",
+    headline: "সন্ত্রাসীদের নিষেধাজ্ঞা প্রত্যাহার করে ‘বৈধতা’ দেওয়া চলবে না: রাষ্ট্রসঙ্ঘে ভারতের কড়া বার্তা",
+    subHeadline: "এই ভারত ভয় পায় না: রুশ তেল কেনায় ভারতের নতুন রেকর্ড, ১০০ শতাংশ মার্কিন শুল্কের হুমকির মধ্যেই বাড়ল আমদানি",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0006.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0006.jpg"
+  },
+  {
+    pageNum: 7,
+    title: "৭ম পৃষ্ঠা (বিদেশ বিভুঁই)",
+    badge: "৭ম পৃষ্ঠা",
+    headline: "সম্পাদকের কলম: কাশ্মীর থেকে কোরিয়া, ড্রোনযুদ্ধ থেকে নেপালের ইতিহাস— নতুন বিশ্বব্যবস্থার সামনে ভারত",
+    subHeadline: "শক্তি সমীকরণ: আঞ্চলিক নিরাপত্তায় রাশিয়া - উত্তর কোরিয়ার যৌথ সমন্বয়ের বার্তা পুতিনের",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0007.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0007.jpg"
+  },
+  {
+    pageNum: 8,
+    title: "৮ম পৃষ্ঠা (সম্পাদক দর্পণ)",
+    badge: "৮ম পৃষ্ঠা",
+    headline: "মন্থন: বিজেপির নতুন জাতীয় সাংগঠনিক দল ঘোষণা, ফিরলেন স্মৃতি ইরানি ও রাম মাধব",
+    subHeadline: "সম্পাদকের কলমে: কূটনীতির ভাষায় পাল্টা জবাব—কাশ্মীর নিয়ে ভারতের অবস্থান স্পষ্ট",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0008.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0008.jpg"
+  },
+  {
+    pageNum: 9,
+    title: "৯ম পৃষ্ঠা (বিতর্ক-বিমর্শ)",
+    badge: "৯ম পৃষ্ঠা",
+    headline: "ইতিহাসের পুনরাবৃত্তি: স্বাধীনতা ও এক হিন্দুর আক্ষেপ — সঞ্জীব মণ্ডল",
+    subHeadline: "অখণ্ড হিন্দু সমাজকে ঐক্যবদ্ধ ও শক্তিশালী করার জাতীয়তাবাদী চিন্তন",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0009.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0009.jpg"
+  },
+  {
+    pageNum: 10,
+    title: "১০ম পৃষ্ঠা (বিতর্ক-বিমর্শ)",
+    badge: "১০ম পৃষ্ঠা",
+    headline: "শিল্প-শিল্পী ও অপ-সংস্কৃতি: তারকার মুখে দেশপ্রেম, বিজ্ঞাপনে দায়বোধ কোথায়? বিমল পানমশলা বিতর্কে শাহরুখ-অজয়-টাইগারকে নোটিস",
+    subHeadline: "বুমেরাং: ঝাড়খণ্ডে ছাত্র আন্দোলন ঘিরে চাপে সরকার, রাহুল গান্ধীর চিঠি ও কংগ্রেসকে ঘিরে নতুন বিতর্ক",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0010.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0010.jpg"
+  },
+  {
+    pageNum: 11,
+    title: "১১শ পৃষ্ঠা (আন্তর্জাতিক সম্পর্ক)",
+    badge: "১১শ পৃষ্ঠা",
+    headline: "রণদেহী: ভারতীয়দের অনলাইন ক্ষোভে চাপে পিটার নাভারো, রুশ তেল নিয়ে মন্তব্য ঘিরে ফের বিতর্ক",
+    subHeadline: "১৮১৬ সালের সুগোলি চুক্তির মূল নথি হারিয়ে ফেলেছে নেপাল? | ‘ইসলামিক রিপাবলিক অব ব্রিটেন’ বিতর্ক",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0011.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0011.jpg"
+  },
+  {
+    pageNum: 12,
+    title: "১২শ পৃষ্ঠা (পড়শী কথা)",
+    badge: "১২শ পৃষ্ঠা",
+    headline: "কাশ্মীর ভারতের অবিচ্ছেদ্য অঙ্গ: ‘গুলির শাসন মানি না’: পাক অধিকৃত কাশ্মীরে পাকিস্তানের বিরুদ্ধে অসহযোগ আন্দোলন",
+    subHeadline: "ড্রাগনের শ্বাস: চীনের ড্রোন আধিপত্যে আঘাত ট্রাম্পের ১০০% শুল্ক; ভারতের ভাগ্যে কি শিকে ছিঁড়ছে?",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0012.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0012.jpg"
+  },
+  {
+    pageNum: 13,
+    title: "১৩শ পৃষ্ঠা (সনাতনী নারী)",
+    badge: "১৩শ পৃষ্ঠা",
+    headline: "সম্পাদিকার কলম: ডাঃ মধুচ্ছন্দা কর বিজেপির জাতীয় সহ-সভাপতি, কেন্দ্রীয় নেতৃত্বে বাংলার আরও এক মহিলা মুখ",
+    subHeadline: "শক্তিরূপেণ সংস্থিতা: জঙ্গল থেকে র‍্যাম্প, নতুন জীবনের গল্প; বস্তারের মেয়েদের ফ্যাশন শো",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0013.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0013.jpg"
+  },
+  {
+    pageNum: 14,
+    title: "১৪শ পৃষ্ঠা (সনাতনী নারী)",
+    badge: "১৪শ পৃষ্ঠা",
+    headline: "আমি স্বয়ংসিদ্ধা: মা প্রভাবতী দেবী: যে মায়ের কোলে তৈরি হয়েছিল এক নেতাজি",
+    subHeadline: "‘ঘোড়ার মতো পরিশ্রম করলে একটু লাথি মারতেও হয়’, কর্মজীবী নারীদের উদ্দেশে স্মৃতি ইরানির স্পষ্ট বার্তা",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0014.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0014.jpg"
+  },
+  {
+    pageNum: 15,
+    title: "১৫শ পৃষ্ঠা (আমি ভারত বলছি)",
+    badge: "১৫শ পৃষ্ঠা",
+    headline: "স্বাধীনতার রক্তবেদী: ১৬ই আগস্ট ১৯৪৬: যে প্রত্যক্ষ সংগ্রাম হিন্দু রক্তে রেঙে আছে আজও",
+    subHeadline: "দ্য গ্রেট ক্যালকাটা কিলিংস ও ডাইরেক্ট অ্যাকশন ডে-র রক্তাক্ত অধ্যায় ও ইতিহাসের দর্পণ",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0015.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0015.jpg"
+  },
+  {
+    pageNum: 16,
+    title: "১৬শ পৃষ্ঠা (আপনার দৃষ্টি)",
+    badge: "১৬শ পৃষ্ঠা",
+    headline: "শ্রদ্ধেয় তপন ঘোষের প্রতিষ্ঠিত হিন্দু সংহতির ১৬ আগস্ট পদযাত্রা ও বেঙ্গল ভলান্টিয়ার্সের অনুষ্ঠান",
+    subHeadline: "বঙ্গীয় গ্রন্থশিল্প পরিষদ: প্রকাশক, মুদ্রক ও পুস্তক পরিবেশকদের জাতীয়তাবাদী মঞ্চ",
+    pageImg: "epaper_pages/Bongodhwani 17-08-26_page-0016.jpg",
+    mainImg: "epaper_pages/Bongodhwani 17-08-26_page-0016.jpg"
+  }
 ];
 
 let currentPageIndex = 0;
