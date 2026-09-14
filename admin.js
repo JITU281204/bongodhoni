@@ -11,7 +11,7 @@ function loadSettingsForm() {
   const settings = BongoCMS.getSettings();
   if (document.getElementById("set-edition-date")) {
     document.getElementById("set-edition-date").value = settings.editionDateStr || '';
-    document.getElementById("set-hotline").value = settings.hotlineWhatsApp || '';
+    document.getElementById("set-hotline").value = settings.hotline || settings.hotlineWhatsApp || '';
     document.getElementById("set-email").value = settings.email || '';
   }
 }
@@ -21,7 +21,8 @@ function saveSettingsHandler(e) {
   const settings = BongoCMS.getSettings();
 
   settings.editionDateStr = document.getElementById("set-edition-date").value;
-  settings.hotlineWhatsApp = document.getElementById("set-hotline").value;
+  settings.hotline = document.getElementById("set-hotline").value;
+  settings.hotlineWhatsApp = settings.hotline;
   settings.email = document.getElementById("set-email").value;
 
   BongoCMS.saveSettings(settings);
